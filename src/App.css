@@ -1,0 +1,198 @@
+/***** Css reset *****/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+/***** End css reset *****/
+
+.inter{
+    font-family: 'Inter', serif;
+}
+
+.poppins-font{
+    font-family: 'Poppins', serif;
+}
+
+/* Dark Mode Button*/
+
+label {
+    color: #424242;
+  }
+  
+  .btn-color-mode-switch {
+    font-family: "Poppins", serif;
+  }
+  
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner {
+    background: #e0e0e0;
+    border-radius: 26px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 8px 0px rgba(17, 17, 17, 0.34) inset;
+  }
+  
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
+    content: attr(data-on);
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    top: 7px;
+    right: 20px;
+  }
+  
+  .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
+    content: attr(data-off);
+    width: 70px;
+    height: 28px;
+    background: #fff;
+    border-radius: 26px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 6px -2px #111;
+    padding: 5px 0px;
+  }
+  
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner {
+    background: rgb(49, 49, 49);
+    color: #fff;
+  }
+  
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
+    content: attr(data-on);
+    left: 71.8px;
+    background: #3c3c3c;
+  }
+  
+  .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:before {
+    content: attr(data-off);
+    right: auto;
+    left: 20px;
+  }
+  
+  /*End Dark Mode Button*/
+
+  /* button scroll */
+
+.btn-scroll {
+  border-radius: 30px;
+  outline: 2px solid #7d2ae8;
+  box-shadow: 0px 0px 10px #4a19a0;
+}
+
+.scroll {
+  background-color: #a845e9;
+  box-shadow: 0px 0px 10px #4a19a0;
+  animation: scroll_4013 2s linear infinite;
+  transform: translateY(40%);
+}
+
+.btn-scroll:after {
+  content: "scroll";
+  position: absolute;
+  top: 120%;
+  color: #7d2ae8;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Poppins", serif;
+}
+
+/* end button scroll*/
+
+@keyframes scroll_4013 {
+  0% {
+    transform: translateY(40%);
+  }
+
+  50% {
+    transform: translateY(90%);
+  }
+}
+
+/* Social Buttons */
+
+.social-buttons {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 15px #00000027;
+  padding: 15px 10px;
+  border-radius: 5em;
+}
+
+.social-buttons svg {
+  transition: 0.3s;
+  height: 20px;
+}
+
+.github {
+  background-color: #333;
+}
+
+.github svg {
+  fill: #f2f2f2;
+}
+
+.github:hover svg {
+  fill: #333;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.linkedin svg {
+  fill: #f2f2f2;
+}
+
+.linkedin:hover svg {
+  fill: #0077b5;
+}
+
+/* End Social Buttons */
+
+
+*::-webkit-scrollbar {
+  height: 15px;
+  width: 15px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #EBEBEB;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #EBEBEB;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #EBEBEB;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #444444;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #202020;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #2B2B2B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
