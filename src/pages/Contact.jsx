@@ -49,7 +49,7 @@ const Contact = () => {
         <form
           onSubmit={handleSubmit(onSubmit)}
           style={{ width: '80%' }}
-          className="max-w-2xl mx-auto p-8 rounded-xl shadow-lg bg-[#F2F2F2] dark:bg-[#1F1F1F]"
+          className="w-full h-screen mx-auto p-8 place-content-center rounded-xl shadow-lg border-solid border border-[#F2F2F2] dark:border-[#1F1F1F]"
         >
           <div className="mb-6">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -91,7 +91,7 @@ const Contact = () => {
               id="message"
               {...register('message')}
               className={`w-full p-4 border-2 rounded-lg dark:bg-gray-800 dark:text-white  transition duration-300 
-                ${errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} 
+                ${errors.message ? 'border-red-500' && 'dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} 
                 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
               rows="4"
               placeholder="Write a message..."
@@ -101,7 +101,7 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 dark:bg-zinc-600 dark:text-white dark:hover:bg-zinc-800 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300"
           >
             Send Message
           </button>

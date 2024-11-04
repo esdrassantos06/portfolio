@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import LoadingScreen from './LoadingScreen';
 
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -15,13 +16,13 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <>
       {loading ? (
         <LoadingScreen />
       ) : (
         <Outlet />
       )}
-    </div>
+    </>
   );
 }
 

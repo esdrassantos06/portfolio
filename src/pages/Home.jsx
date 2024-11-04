@@ -1,17 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar'
 import WritingEffect from '../components/WritingEffect';
 import myselfImage from '../assets/images/myself.png'
 import { SquareChevronRight, Layers3, BookOpen } from 'lucide-react';
+import ProjectGrid from '../components/Projects'
+import Footer from '../components/Footer'
+import { motion } from 'framer-motion';
 
 const Home = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    const [isBlurred, setIsBlurred] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const homeSection = document.getElementById('home');
+            const homeRect = homeSection.getBoundingClientRect();
+            
+            const isBeyondHalfVisible = homeRect.bottom < window.innerHeight * 0.5 || homeRect.top > window.innerHeight * 0.5;
+            setIsBlurred(isBeyondHalfVisible);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const homeSection = document.getElementById('home');
+            const homeRect = homeSection.getBoundingClientRect();
+
+            const isAtHomeSection = homeRect.top >= 0 && homeRect.bottom <= window.innerHeight;
+
+            setIsVisible(!isAtHomeSection);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <>
             <header className='fixed w-full z-50'>
                 <Navbar />
             </header>
-            <main className='w-full h-screen'>
-                <section className='__main-container flex h-full bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap' id='home'>
+            <main className='w-full h-full'>
+
+            <motion.section
+                    className={`__main-container flex h-screen bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap ${isBlurred ? 'blur-sm' : 'blur-0'}`}
+                    id="home"
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: isBlurred ? 0.8 : 1 }}
+                    transition={{ duration: 0.3 }}
+                >
                     <article
                         className="mt-0 max-sm:mt-[5vh] flex flex-col justify-start max-sm:ml-4 ml-12 items-start w-full poppins-font">
                         <h1 className="select-none text-[50pt] font-bold poppins-font dark:text-white max-sm:text-[35pt]">Hi, I'm <span
@@ -58,98 +101,123 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                </section>
-                <section className='__about-container pb-72 flex h-[90vh] bg-about-purple flex-col w-full items-center max-lg:flex-wrap' id='about'>
-                    <div className='mt-32 flex flex-col justify-center items-center poppins-font'>
-                        <h1 className='about-main-title poppins-font font-bold max-sm:text-[40pt] text-[50pt] select-none text-white'>About <span
-                            className="text-mypurple bg-mist-gray dark:bg-custom-black whitespan">Me</span></h1>
-                        <p className="text-white xl:w-2/4 mt-4 p-3 text-center">My name is Esdras, an 18-year-old Brazilian frontend developer living in Portugal. I'm passionate about creating user-friendly and visually appealing web interfaces, with a solid background in JavaScript, HTML, and CSS. My expertise in React helps me build dynamic, component-based interfaces that are efficient and maintainable. Living in Portugal has broadened my perspective on international development trends, and I strive to deliver clean, optimized code for enjoyable interactions across different devices and platforms.</p>
-                    </div>
-                </section>
+                </motion.section>
 
-                <section className='__skills mt-[-20rem] pb-4 flex justify-center h-fit items-center w-full' id='about'>
-                    <div className='container shadow-md shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg h-full'>
-                        <div className='__box mt-20 mb-24 w-full h-full'>
-                            <div className='__content flex justify-around items-stretch flex-row w-full h-full text-black'>
- 
-                                <div className='__column flex flex-col justify-center items-center gap-3 h-full w-1/3'>
-                                    <div className='bg-green-500 mb-4 rounded-full p-4'>
-                                        <Layers3 size={40} />
+
+                <section id="about" className={`__about-container pb-72 flex h-[90vh] bg-about-purple flex-col w-full items-center max-lg:flex-wrap`}>
+                        <div className='mt-32 flex flex-col justify-center items-center poppins-font'>
+                            <h1 className='about-main-title poppins-font font-bold max-sm:text-[40pt] text-[50pt] select-none text-white'>About <span
+                                className="text-mypurple bg-mist-gray dark:bg-custom-black whitespan">Me</span></h1>
+                            <p className="text-white xl:w-2/4 mt-4 p-3 text-center">My name is Esdras, an 18-year-old Brazilian frontend developer living in Portugal. I'm passionate about creating user-friendly and visually appealing web interfaces, with a solid background in JavaScript, HTML, and CSS. My expertise in React helps me build dynamic, component-based interfaces that are efficient and maintainable. Living in Portugal has broadened my perspective on international development trends, and I strive to deliver clean, optimized code for enjoyable interactions across different devices and platforms.</p>
+                        </div>
+                    </section>
+
+                    {isVisible && (
+                        <button
+                            className={`bg-mypurple group transition-all duration-500 ease-in-out hover:duration-300 poppins-font w-[50px] h-[50px] border-0 font-semibold flex items-center justify-center cursor-pointer overflow-hidden fixed opacity-100 bottom-5 right-5 rounded-full z-[98] hover:items-center hover:w-36 hover:rounded-[50px]`}
+                            id="backtoTop"
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        >
+                            <svg className="svgIcon group-hover:hidden transition duration-300 w-3" viewBox="0 0 384 512">
+                                <path className="fill-white" d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
+                            </svg>
+                            <p className='hidden group-hover:flex text-white whitespace-nowrap inter text-sm'>Back to Top</p>
+                        </button>
+                    )}
+
+
+
+
+                    <section
+                        id="skills"
+                        className='__skills mt-[-20rem] pt-28 pb-4 flex justify-center h-fit items-center w-full'>
+                        <div className='container shadow-md shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg h-full'>
+                            <div className='__box mt-20 mb-24 w-full h-full'>
+                                <div className='__content flex justify-around items-stretch flex-row w-full h-full text-black'>
+
+                                    <div className='__column flex flex-col justify-center items-center gap-3 h-full w-1/3'>
+                                        <div className='bg-green-500 mb-4 rounded-full p-4'>
+                                            <Layers3 size={40} />
+                                        </div>
+                                        <div className='flex flex-col poppins-font items-center justify-center'>
+                                            <h2 className='text-xl mb-8 font-bold select-none dark:text-white'>Design</h2>
+                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I value a simple content structure, clean design patterns, and intentional interactions.</p>
+                                        </div>
+                                        <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Things I enjoy designing:</h1>
+                                            <p className='text-base font-medium dark:text-white' translate='no'>UX, UI, Web, Apps, Logos</p>
+                                        </div>
+                                        <div className='column poppins-font flex flex-col items-center justify-center'>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Design Tools:</h1>
+                                            <ul className='flex flex-col items-center justify-center' translate='no'>
+                                                <li className='text-base font-medium dark:text-white'>Figma</li>
+                                                <li className='text-base font-medium dark:text-white'>Sketch</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div className='flex flex-col poppins-font items-center justify-center'>
-                                        <h2 className='text-xl mb-8 font-bold dark:text-white'>Design</h2>
-                                        <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I value a simple content structure, clean design patterns, and intentional interactions.</p>
+
+                                    <div className='__column flex flex-col border-solid justify-center h-full items-center gap-3 w-1/3 border-l border-r border-gray-300 dark:border-gray-700'>
+                                        <div className='bg-green-500 mb-4 rounded-full p-4'>
+                                            <SquareChevronRight size={40} />
+                                        </div>
+                                        <div className='flex flex-col poppins-font items-center justify-center'>
+                                            <h2 className='text-xl mb-8 font-bold dark:text-white select-none'>FrontEnd Developer</h2>
+                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I enjoy coding things from scratch and bringing ideas to life in the browser.</p>
+                                        </div>
+                                        <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Languages I know:</h1>
+                                            <p className='text-base font-medium dark:text-white' translate='no'>HTML, CSS, Sass, Git, JavaScript</p>
+                                        </div>
+                                        <div className='poppins-font flex flex-col items-center justify-center'>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Dev Tools:</h1>
+                                            <ul className='flex flex-col items-center justify-center' translate='no'>
+                                                <li className='text-base font-medium dark:text-white'>VS Code</li>
+                                                <li className='text-base font-medium dark:text-white'>Tailwind CSS</li>
+                                                <li className='text-base font-medium dark:text-white'>Bulma</li>
+                                                <li className='text-base font-medium dark:text-white'>Bootstrap</li>
+                                                <li className='text-base font-medium dark:text-white'>Github</li>
+                                                <li className='text-base font-medium dark:text-white'>React</li>
+                                                <li className='text-base font-medium dark:text-white'>Node.js</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
-                                        <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Things I enjoy designing:</h1>
-                                        <p className='text-base font-medium dark:text-white'>UX, UI, Web, Apps, Logos</p>
+
+
+                                    <div className='__column flex flex-col justify-center h-full items-center gap-3 w-1/3'>
+                                        <div className='bg-green-500 mb-4 rounded-full p-4'>
+                                            <BookOpen size={40} />
+                                        </div>
+                                        <div className='flex flex-col poppins-font items-center justify-center'>
+                                            <h2 className='text-xl mb-8 font-bold select-none dark:text-white'>Education</h2>
+                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I am currently studying at Tokio School, where I am enhancing my skills in web development.</p>
+                                        </div>
+                                        <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Courses:</h1>
+                                            <p className='text-base font-medium dark:text-white' translate='no'>HTML, CSS, JavaScript, React</p>
+                                        </div>
+                                        <div className='poppins-font flex flex-col items-center justify-center'>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Institution:</h1>
+                                            <a href='https://tokioschool.pt' target='_blank' className='text-base underline font-medium dark:text-white' translate='no'>Tokio School</a>
+                                        </div>
                                     </div>
-                                    <div className='column poppins-font flex flex-col items-center justify-center'>
-                                        <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Design Tools:</h1>
-                                        <ul className='flex flex-col items-center justify-center'>
-                                            <li className='text-base font-medium dark:text-white'>Figma</li>
-                                            <li className='text-base font-medium dark:text-white'>Sketch</li>
-                                        </ul>
-                                    </div>
+
                                 </div>
-
-
-                                <div className='__column flex flex-col border-solid justify-center h-full items-center gap-3 w-1/3 border-l border-r border-gray-300 dark:border-gray-700'>
-                                    <div className='bg-green-500 mb-4 rounded-full p-4'>
-                                        <SquareChevronRight size={40} />
-                                    </div>
-                                    <div className='flex flex-col poppins-font items-center justify-center'>
-                                        <h2 className='text-xl mb-8 font-bold dark:text-white'>FrontEnd Developer</h2>
-                                        <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I enjoy coding things from scratch and bringing ideas to life in the browser.</p>
-                                    </div>
-                                    <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
-                                        <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Languages I know:</h1>
-                                        <p className='text-base font-medium dark:text-white'>HTML, CSS, Sass, Git, JavaScript</p>
-                                    </div>
-                                    <div className='poppins-font flex flex-col items-center justify-center'>
-                                        <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Dev Tools:</h1>
-                                        <ul className='flex flex-col items-center justify-center'>
-                                            <li className='text-base font-medium dark:text-white'>VS Code</li>
-                                            <li className='text-base font-medium dark:text-white'>Tailwind CSS</li>
-                                            <li className='text-base font-medium dark:text-white'>Bulma</li>
-                                            <li className='text-base font-medium dark:text-white'>Bootstrap</li>
-                                            <li className='text-base font-medium dark:text-white'>Github</li>
-                                            <li className='text-base font-medium dark:text-white'>React</li>
-                                            <li className='text-base font-medium dark:text-white'>Node.js</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-
-                                <div className='__column flex flex-col justify-center h-full items-center gap-3 w-1/3'>
-                                    <div className='bg-green-500 mb-4 rounded-full p-4'>
-                                        <BookOpen size={40} />
-                                    </div>
-                                    <div className='flex flex-col poppins-font items-center justify-center'>
-                                        <h2 className='text-xl mb-8 font-bold dark:text-white'>Education</h2>
-                                        <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I am currently studying at Tokio School, where I am enhancing my skills in web development.</p>
-                                    </div>
-                                    <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
-                                        <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Courses:</h1>
-                                        <p className='text-base font-medium dark:text-white'>HTML, CSS, JavaScript, React</p>
-                                    </div>
-                                    <div className='poppins-font flex flex-col items-center justify-center'>
-                                        <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Institution:</h1>
-                                        <a href='https://tokioschool.pt' target='_blank' className='text-base underline font-medium dark:text-white'>Tokio School</a>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
 
-                <section className='__projects-container flex h-full max-md:flex-wrap bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap' id='projects'>
-
-                {/* Vamos ver oque fazer aqui */}
-                </section>
+                    <section className='__projects-container pb-10 pt-40 flex justify-center h-full max-md:flex-wrap bg-mist-gray dark:bg-custom-black flex-col w-full items-center max-lg:flex-wrap' id='projects'>
+                        <div className='flex flex-col mb-20 items-center justify-center'>
+                            <h1 className='text-black dark:text-white poppins-font mb-9 font-bold text-6xl'>My Recent <span className='text-mypurple'>Work</span></h1>
+                            <p className='poppins-font text-lg text-black dark:text-white'>Here are a few past design projects I've worked on. Want to see more? <a className='text-blue-500 hover:text-blue-700 transition duration-500' href='mailto:esdrasirion1@gmail.com'>Email me</a>.</p>
+                        </div>
+                        <div className='flex poppins-font'>
+                            <ProjectGrid />
+                        </div>
+                    </section>
             </main>
+            <Footer />
         </>
     );
 };

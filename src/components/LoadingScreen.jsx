@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated } from '@react-spring/web';
 
 const LoadingScreen = ({ onComplete }) => {
   const [progress, setProgress] = React.useState(0);
@@ -7,19 +7,19 @@ const LoadingScreen = ({ onComplete }) => {
   const barProps = useSpring({
     width: `${progress}%`,
     from: { width: '0%' },
-    config: { duration: 2000 }, // 2 segundos para a barra de loading
+    config: { duration: 3000 },
   });
 
   const circleProps = useSpring({
     to: [
       { transform: 'scale(1)', opacity: 1 },
-      { transform: 'scale(15)', opacity: 0 }, // Cresce e some
+      { transform: 'scale(15)', opacity: 0 },
     ],
     from: { transform: 'scale(1)', opacity: 1 },
     config: { duration: 1000 },
     onRest: () => {
       if (progress === 100) {
-        onComplete(); // Chama a função quando a animação termina
+        onComplete();
       }
     },
   });
@@ -27,32 +27,25 @@ const LoadingScreen = ({ onComplete }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prev) => {
-        if (prev < 100) return prev + 5; // Incrementa o progresso
+        if (prev < 100) return prev + 5;
         clearInterval(timer);
         return prev;
       });
-    }, 100); // Aumenta o progresso a cada 100ms
+    }, 100);
 
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="loading-screen" style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      backgroundColor: '#000000',
-    }}>
+    <div className="loading-screen flex flex-col items-center justify-center h-screen bg-custom-black">
       <animated.div style={{
         backgroundColor: '#7D2AE8',
         height: '10px',
         borderRadius: '5px',
         width: barProps.width,
-        marginBottom: '20px',
+        marginBottom: '50px',
       }} />
-      <div style={{ display: 'flex' }}>
+      <div  className='flex gap-3'>
         <animated.div
           style={{
             ...circleProps,
