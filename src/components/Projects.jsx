@@ -94,15 +94,15 @@ const ProjectGrid = () => {
     const visibleProjects = showMore ? projects : projects.slice(0, 6);
 
     return (
-        <div className='flex flex-col items-center mb-20'>
-            <div className='grid grid-cols-3 gap-4'>
+        <div className='flex flex-col items-center mx-4 mb-20'>
+            <div className='grid grid-cols-3 max-sm:grid-cols-1 gap-4'>
                 {visibleProjects.map((project) => (
                     <a
                         key={project.id}
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className='relative bg-gray-200 shadow-md shadow-slate-300 hover:scale-105 dark:shadow-zinc-950 dark:bg-neutral-900 p-4 rounded-lg overflow-hidden'
+                        className='relative bg-gray-200 shadow-md shadow-slate-300 active:scale-100 active:translate-y-1 hover:scale-105 dark:shadow-zinc-950 dark:bg-neutral-900 p-4 rounded-lg overflow-hidden'
                         onMouseEnter={() => setHoveredProject(project.id)}
                         onMouseLeave={() => setHoveredProject(null)}
                     >

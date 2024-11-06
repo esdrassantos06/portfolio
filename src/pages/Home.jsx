@@ -43,7 +43,7 @@ const Home = () => {
 
     return (
         <>
-            <header className='fixed w-full z-50'>
+            <header className='fixed bg-mist-gray w-full dark:bg-custom-black z-50'>
                 <Navbar />
             </header>
             <main className='w-full h-full'>
@@ -130,70 +130,70 @@ const Home = () => {
 
                     <section
                         id="skills"
-                        className='__skills mt-[-20rem] pt-28 pb-4 flex justify-center h-fit items-center w-full'>
+                        className='__skills mt-[-20rem] max-sm:mt-[-15rem] pt-28 max-sm:pt-24 pb-4 flex justify-center h-fit items-center max-sm:w-[90%] mx-auto w-full'>
                         <div className='container shadow-md shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg h-full'>
                             <div className='__box mt-20 mb-24 w-full h-full'>
-                                <div className='__content flex justify-around items-stretch flex-row w-full h-full text-black'>
+                                <div className='__content max-sm:block flex justify-around items-stretch flex-row w-full h-full text-black'>
 
-                                    <div className='__column flex flex-col justify-center items-center gap-3 h-full w-1/3'>
+                                    <div className='__column flex flex-col justify-center items-center gap-3 h-full sm:w-1/3'>
                                         <div className='bg-green-500 mb-4 rounded-full p-4'>
                                             <Layers3 size={40} />
                                         </div>
                                         <div className='flex flex-col poppins-font items-center justify-center'>
-                                            <h2 className='text-xl mb-8 font-bold select-none dark:text-white'>Design</h2>
-                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I value a simple content structure, clean design patterns, and intentional interactions.</p>
+                                            <h2 className='text-xl mb-8 font-bold select-none dark:text-white max-md:text-lg'>Design</h2>
+                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center max-md:text-base max-lg:w-fit'>I value a simple content structure, clean design patterns, and intentional interactions.</p>
                                         </div>
-                                        <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
-                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Things I enjoy designing:</h1>
-                                            <p className='text-base font-medium dark:text-white' translate='no'>UX, UI, Web, Apps, Logos</p>
+                                        <div className='poppins-font mb-28 max-sm:mb-10 flex flex-col items-center justify-center'>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg text-center dark:text-white'>Things I enjoy designing:</h1>
+                                            <p className='text-base font-medium dark:text-white text-center' translate='no'>UX, UI, Web, Apps, Logos</p>
                                         </div>
                                         <div className='column poppins-font flex flex-col items-center justify-center'>
-                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Design Tools:</h1>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white text-center'>Design Tools:</h1>
                                             <ul className='flex flex-col items-center justify-center' translate='no'>
-                                                <li className='text-base font-medium dark:text-white'>Figma</li>
-                                                <li className='text-base font-medium dark:text-white'>Sketch</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>Figma</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>Sketch</li>
                                             </ul>
                                         </div>
                                     </div>
 
-                                    <div className='__column flex flex-col border-solid justify-center h-full items-center gap-3 w-1/3 border-l border-r border-gray-300 dark:border-gray-700'>
-                                        <div className='bg-green-500 mb-4 rounded-full p-4'>
+                                    <div className='__column flex flex-col border-solid justify-center h-full items-center gap-3 sm:w-1/3 sm:border-l sm:border-r max-sm:border-b max-sm:border-t max-sm:mt-6 max-sm:mb-6 border-gray-300 dark:border-gray-700'>
+                                        <div className='bg-green-500 mb-4 max-sm:mt-4 rounded-full p-4'>
                                             <SquareChevronRight size={40} />
                                         </div>
                                         <div className='flex flex-col poppins-font items-center justify-center'>
-                                            <h2 className='text-xl mb-8 font-bold dark:text-white select-none'>FrontEnd Developer</h2>
-                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I enjoy coding things from scratch and bringing ideas to life in the browser.</p>
+                                            <h2 className='text-xl max-md:text-lg  mb-8 font-bold text-center dark:text-white select-none'>FrontEnd Developer</h2>
+                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center max-md:text-base max-lg:w-fit'>I enjoy coding things from scratch and bringing ideas to life in the browser.</p>
                                         </div>
-                                        <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
-                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Languages I know:</h1>
-                                            <p className='text-base font-medium dark:text-white' translate='no'>HTML, CSS, Sass, Git, JavaScript</p>
+                                        <div className='poppins-font mb-28 max-sm:mb-10 flex flex-col items-center justify-center'>
+                                            <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white text-center'>Languages I know:</h1>
+                                            <p className='text-base font-medium dark:text-white text-center' translate='no'>HTML, CSS, Sass, Git, JavaScript</p>
                                         </div>
-                                        <div className='poppins-font flex flex-col items-center justify-center'>
+                                        <div className='poppins-font max-sm:mb-4 flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Dev Tools:</h1>
                                             <ul className='flex flex-col items-center justify-center' translate='no'>
-                                                <li className='text-base font-medium dark:text-white'>VS Code</li>
-                                                <li className='text-base font-medium dark:text-white'>Tailwind CSS</li>
-                                                <li className='text-base font-medium dark:text-white'>Bulma</li>
-                                                <li className='text-base font-medium dark:text-white'>Bootstrap</li>
-                                                <li className='text-base font-medium dark:text-white'>Github</li>
-                                                <li className='text-base font-medium dark:text-white'>React</li>
-                                                <li className='text-base font-medium dark:text-white'>Node.js</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>VS Code</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>Tailwind CSS</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>Bulma</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>Bootstrap</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>Github</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>React</li>
+                                                <li className='text-base font-medium dark:text-white text-center'>Node.js</li>
                                             </ul>
                                         </div>
                                     </div>
 
 
-                                    <div className='__column flex flex-col justify-center h-full items-center gap-3 w-1/3'>
-                                        <div className='bg-green-500 mb-4 rounded-full p-4'>
+                                    <div className='__column flex flex-col justify-center h-full items-center gap-3 sm:w-1/3'>
+                                        <div className='bg-green-500 mb-4 max-sm:mt-4 rounded-full p-4'>
                                             <BookOpen size={40} />
                                         </div>
                                         <div className='flex flex-col poppins-font items-center justify-center'>
-                                            <h2 className='text-xl mb-8 font-bold select-none dark:text-white'>Education</h2>
-                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center'>I am currently studying at Tokio School, where I am enhancing my skills in web development.</p>
+                                            <h2 className='text-xl max-md:text-lg mb-8 font-bold select-none dark:text-white'>Education</h2>
+                                            <p className='text-lg max-md:text-base max-lg:w-fit mb-8 w-[300px] dark:text-white text-center'>I am currently studying at Tokio School, where I am enhancing my skills in web development.</p>
                                         </div>
-                                        <div className='poppins-font mb-28 flex flex-col items-center justify-center'>
+                                        <div className='poppins-font mb-28 max-sm:mb-10 flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Courses:</h1>
-                                            <p className='text-base font-medium dark:text-white' translate='no'>HTML, CSS, JavaScript, React</p>
+                                            <p className='text-base font-medium text-center dark:text-white' translate='no'>HTML, CSS, JavaScript, React</p>
                                         </div>
                                         <div className='poppins-font flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Institution:</h1>
@@ -207,10 +207,10 @@ const Home = () => {
                     </section>
 
 
-                    <section className='__projects-container pb-10 pt-40 flex justify-center h-full max-md:flex-wrap bg-mist-gray dark:bg-custom-black flex-col w-full items-center max-lg:flex-wrap' id='projects'>
+                    <section className='__projects-container pb-10 pt-40 flex justify-center h-full max-md:flex-wrap bg-mist-gray dark:bg-custom-black flex-col w-full  items-center max-lg:flex-wrap' id='projects'>
                         <div className='flex flex-col mb-20 items-center justify-center'>
-                            <h1 className='text-black dark:text-white poppins-font mb-9 font-bold text-6xl'>My Recent <span className='text-mypurple'>Work</span></h1>
-                            <p className='poppins-font text-lg text-black dark:text-white'>Here are a few past design projects I've worked on. Want to see more? <a className='text-blue-500 hover:text-blue-700 transition duration-500' href='mailto:esdrasirion1@gmail.com'>Email me</a>.</p>
+                            <h1 className='text-black dark:text-white text-center poppins-font mb-9 font-bold text-6xl'>My Recent <span className='text-mypurple text-center'>Work</span></h1>
+                            <p className='poppins-font text-lg text-black text-center dark:text-white'>Here are a few past design projects I've worked on. Want to see more? <a className='text-blue-500 hover:text-blue-700 transition duration-500' href='mailto:esdrasirion1@gmail.com'>Email me</a>.</p>
                         </div>
                         <div className='flex poppins-font'>
                             <ProjectGrid />
