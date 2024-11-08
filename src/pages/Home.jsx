@@ -43,7 +43,7 @@ const Home = () => {
 
     return (
         <>
-            <header className='fixed bg-mist-gray w-full dark:bg-custom-black z-50'>
+            <header className='fixed bg-mist-gray w-full max-w-[100vw] dark:bg-custom-black z-50'>
                 <Navbar />
             </header>
             <main className='w-full h-full'>
@@ -141,7 +141,7 @@ const Home = () => {
                                         </div>
                                         <div className='flex flex-col poppins-font items-center justify-center'>
                                             <h2 className='text-xl mb-8 font-bold select-none dark:text-white max-md:text-lg'>Design</h2>
-                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center max-md:text-base max-lg:w-fit'>I value a simple content structure, clean design patterns, and intentional interactions.</p>
+                                            <p className='text-lg mb-8 w-[300px] px-2 dark:text-white text-center max-md:text-base max-lg:w-fit'>I value a simple content structure, clean design patterns, and intentional interactions.</p>
                                         </div>
                                         <div className='poppins-font mb-28 max-sm:mb-10 flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg text-center dark:text-white'>Things I enjoy designing:</h1>
@@ -156,13 +156,13 @@ const Home = () => {
                                         </div>
                                     </div>
 
-                                    <div className='__column flex flex-col border-solid justify-center h-full items-center gap-3 sm:w-1/3 sm:border-l sm:border-r max-sm:border-b max-sm:border-t max-sm:mt-6 max-sm:mb-6 border-gray-300 dark:border-gray-700'>
+                                    <div className='__column flex max-sm:pt-8 flex-col border-solid justify-center h-full items-center gap-3 sm:w-1/3 sm:border-l sm:border-r max-sm:border-b max-sm:border-t max-sm:mt-6 max-sm:mb-6 border-gray-300 dark:border-gray-700'>
                                         <div className='bg-green-500 mb-4 max-sm:mt-4 rounded-full p-4'>
                                             <SquareChevronRight size={40} />
                                         </div>
                                         <div className='flex flex-col poppins-font items-center justify-center'>
                                             <h2 className='text-xl max-md:text-lg  mb-8 font-bold text-center dark:text-white select-none'>FrontEnd Developer</h2>
-                                            <p className='text-lg mb-8 w-[300px] dark:text-white text-center max-md:text-base max-lg:w-fit'>I enjoy coding things from scratch and bringing ideas to life in the browser.</p>
+                                            <p className='text-lg mb-8 w-[300px] px-2 dark:text-white text-center max-md:text-base max-lg:w-fit'>I enjoy coding things from scratch and bringing ideas to life in the browser.</p>
                                         </div>
                                         <div className='poppins-font mb-28 max-sm:mb-10 flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white text-center'>Languages I know:</h1>
@@ -183,13 +183,13 @@ const Home = () => {
                                     </div>
 
 
-                                    <div className='__column flex flex-col justify-center h-full items-center gap-3 sm:w-1/3'>
+                                    <div className='__column flex flex-col max-sm:pt-8 justify-center h-full items-center gap-3 sm:w-1/3'>
                                         <div className='bg-green-500 mb-4 max-sm:mt-4 rounded-full p-4'>
                                             <BookOpen size={40} />
                                         </div>
                                         <div className='flex flex-col poppins-font items-center justify-center'>
                                             <h2 className='text-xl max-md:text-lg mb-8 font-bold select-none dark:text-white'>Education</h2>
-                                            <p className='text-lg max-md:text-base max-lg:w-fit mb-8 w-[300px] dark:text-white text-center'>I am currently studying at Tokio School, where I am enhancing my skills in web development.</p>
+                                            <p className='text-lg max-md:text-base px-2 max-lg:w-fit mb-8 w-[300px] dark:text-white text-center'>I am currently studying at Tokio School, where I am enhancing my skills in web development.</p>
                                         </div>
                                         <div className='poppins-font mb-28 max-sm:mb-10 flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Courses:</h1>
