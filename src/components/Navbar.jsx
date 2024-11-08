@@ -30,67 +30,56 @@ const Navbar = () => {
     }, [darkMode]);
 
     useEffect(() => {
-        const sections = document.querySelectorAll('section');
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5,
-        };
+        if (!isOpen) {
+            const sections = document.querySelectorAll('section');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.3,
+            };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setActiveSection(entry.target.id);
-                }
-            });
-        }, options);
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            }, options);
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        return () => {
             sections.forEach(section => {
-                observer.unobserve(section);
+                observer.observe(section);
             });
-        };
-    }, []);
+
+            return () => {
+                sections.forEach(section => {
+                    observer.unobserve(section);
+                });
+            };
+        }
+    }, [isOpen]);
 
     return (
         <>
             <nav className="navbar flex w-full max-w-[100vw] flex-row p-8 sm:p-10 transition-all ease-in duration-150 justify-between gap-10">
                 <div className='flex sm:mr-6 sm:w-1/2 flex-row sm:justify-start items-center'>
                     <a href='#' translate="no" className='text-mypurple inter md:mx-10 text-xl font-medium'>Es<span className='text-gray-800 dark:text-white'>dras</span></a>
+
                     <ul className='hidden pr-3 md:flex flex-row justify-center items-center gap-6'>
-
-                        <li>
-                            <a translate="no" className={`relative text-md ${activeSection === 'home' ? 'text-mypurple' : darkMode ? 'text-white' : 'text-gray-700'} poppins-font group`} href="#home">
-                                Home
-                                <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gray-700 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 origin-left" />
-                            </a>
-                        </li>
-
-
-                        <li>
-                            <a className={`relative text-md ${activeSection === 'about' ? 'text-mypurple' : 'dark:text-white text-gray-700'} poppins-font group`} href="#about">
-                                About
-                                <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gray-700 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 origin-left" />
-                            </a>
-                        </li>
-                        <li>
-                            <a className={`relative text-md ${activeSection === 'skills' ? 'text-mypurple' : 'dark:text-white text-gray-700'} poppins-font group`} href="#skills">
-                                Skills
-                                <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gray-700 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 origin-left" />
-                            </a>
-                        </li>
-
-                        <li>
-                            <a className={`relative text-md ${activeSection === 'projects' ? 'text-mypurple' : 'dark:text-white text-gray-700'} poppins-font group`} href="#projects">
-                                Projects
-                                <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gray-700 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 origin-left" />
-                            </a>
-                        </li>
+                        {['home', 'about', 'skills', 'projects'].map(section => (
+                            <li key={section}>
+                                <a
+                                    translate="no"
+                                    className={`relative text-md ${activeSection === section ? 'text-mypurple' : darkMode ? 'text-white' : 'text-gray-700'} poppins-font group`}
+                                    href={`#${section}`}
+                                >
+                                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                                    <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gray-700 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 origin-left" />
+                                </a>
+                            </li>
+                        ))}
                     </ul>
+
+
                 </div>
                 <div className='flex sm:w-1/2 flex-row gap-2 items-center justify-end'>
                     <div className='__contact-button hidden md:block'>
@@ -99,14 +88,18 @@ const Navbar = () => {
 
                     <div className='__darkmode-button md:mr-8 mr-4 items-center justify-center flex-row'>
                         <div className='flex items-center'>
-                            <button className='sm:hidden inline-flex' onClick={() => setDarkMode(!darkMode)}>
-                                {darkMode ? <Sun size={22} color='orange' /> : <Moon size={22} className='fill-[#8D827E] stroke-[#8D827E]' />}
-                            </button>
+                            <div className='dark:hover:bg-zinc-800 hover:bg-[#a7a6a6] transition-all duration-200 group p-2 rounded-full flex items-center'>
+                                <button className='sm:hidden inline-flex' onClick={() => setDarkMode(!darkMode)}>
+                                    {darkMode ? <Sun size={22} color='orange' /> : <Moon size={22} className='fill-[#525151] group-hover:stroke-black group-hover:fill-black stroke-[#525151]' />}
+                                </button>
+                            </div>
+
+
                             <div className='__darkmode- hidden sm:flex flex-row'>
                                 <svg viewBox="0 0 16 16" className="bi bi-sun-fill max-sm:mr-1 mr-2" fill="currentColor" width="20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" color="orange"></path>
                                 </svg>
-                                <label className="switch text-sm font-medium cursor-pointer btn-color-mode-switch inline-block m-0 relative" id="light">
+                                <label className="switch text-sm font-medium cursor-pointer btn-color-mode-switch poppins-font inline-block m-0 relative" id="light">
                                     <input value="1" className="w-12 h-6 opacity-0 absolute top-0 m-0 cursor-pointer" id="color_mode" name="color_mode" type="checkbox" />
                                     <label className="btn-color-mode-switch-inner overflow-hidden m-0 w-36 h-8 relative block cursor-pointer" data-off="Light" data-on="Dark" id="trail" onClick={() => setDarkMode(!darkMode)} htmlFor="color_mode"></label>
                                 </label>
@@ -125,23 +118,27 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
+
+
             {isOpen && (
-                <nav className='bg-custom-black flex w-full max-w-[100vw] text-center justify-center p-4 md:hidden'>
-                    <ul className={`poppins-font flex flex-col space-y-2`}>
-                        <li>
-                            <a translate="no" className={`px-4 py-2 text-md ${activeSection === 'home' ? 'text-mypurple' : 'text-white'} group`} href="#home">Home</a>
-                        </li>
-                        <li>
-                            <a translate="no" className={`px-4 py-2 text-md ${activeSection === 'about' ? 'text-mypurple' : 'text-white'} group`} href="#about">About</a>
-                        </li>
-                        <li>
-                            <a translate="no" className={`px-4 py-2 text-md ${activeSection === 'skills' ? 'text-mypurple' : 'text-white'} group`} href="#skills">Skills</a>
-                        </li>
-                        <li>
-                            <a translate="no" className={`px-4 py-2 text-md ${activeSection === 'projects' ? 'text-mypurple' : 'text-white'} group`} href="#projects">Projects</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div className='w-full flex items-center justify-center'>
+                    <nav className='__navbar-responsive text-xl dark:bg-custom-black border-t border-gray-300 border-solid  dark:border-gray-700 z-[99] relative bg-mist-gray flex w-[90%] max-w-[100vw] h-screen text-center justify-center p-4 md:hidden'>
+                        <ul className={`poppins-font flex flex-col gap-1 space-y-2`}>
+                            {['home', 'about', 'skills', 'projects'].map(section => (
+                                <li key={section}>
+                                    <a
+                                        translate="no"
+                                        className={`px-4 py-2 text-md ${activeSection === section ? 'text-mypurple' : darkMode ? 'text-white' : 'text-gray-700'} group`}
+                                        href={`#${section}`}
+                                        onClick={() => setIsOpen(false)} // Fecha o menu ao clicar em um link
+                                    >
+                                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
             )}
 
         </>

@@ -49,18 +49,18 @@ const Home = () => {
             <main className='w-full h-full'>
 
             <motion.section
-                    className={`__main-container flex h-screen bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap ${isBlurred ? 'blur-sm' : 'blur-0'}`}
+                    className={`__main-container max-lg:pt-32 flex h-svh bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap ${isBlurred ? 'blur-sm' : 'blur-0'}`}
                     id="home"
                     initial={{ opacity: 1 }}
                     animate={{ opacity: isBlurred ? 0.8 : 1 }}
                     transition={{ duration: 0.3 }}
                 >
                     <article
-                        className="mt-0 max-sm:mt-[5vh] flex flex-col justify-start max-sm:ml-4 ml-12 items-start w-full poppins-font">
-                        <h1 className="select-none text-[50pt] font-bold poppins-font dark:text-white max-sm:text-[35pt]">Hi, I'm <span
+                        className="mt-0 max-sm:mt-[5vh] flex flex-col justify-start max-md:ml-4 ml-12 items-start w-full poppins-font">
+                        <h1 className="select-none text-[50pt] font-bold poppins-font dark:text-white max-md:text-[45pt]">Hi, I'm <span
                             className="text-mypurple" translate="no">Esdras</span></h1>
                         <WritingEffect />
-                        <p className="max-w-96 mt-4 dark:text-white poppins-font max-sm:mt-2">I'm Esdras, a FrontEnd Developer. I'm 18 years old and
+                        <p className="max-w-96 mt-4 dark:text-white poppins-font max-md:text-lg">I'm Esdras, a FrontEnd Developer. I'm 18 years old and
                             have 1 year of experience. I'm currently living in Portugal.</p>
                     </article>
                     <aside

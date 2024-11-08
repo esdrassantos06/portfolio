@@ -24,14 +24,14 @@ button {
     font-family: 'Poppins', serif;
 }
 
+.__navbar-responsive{
+  z-index: 99999;
+}
+
 /* Dark Mode Button*/
 
 label {
     color: #424242;
-  }
-  
-  .btn-color-mode-switch {
-    font-family: "Poppins", serif;
   }
   
   .btn-color-mode-switch>label.btn-color-mode-switch-inner {
