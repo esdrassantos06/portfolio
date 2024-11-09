@@ -42,7 +42,6 @@ label {
   }
   
   .btn-color-mode-switch>label.btn-color-mode-switch-inner:before {
-    content: attr(data-on);
     position: absolute;
     font-size: 12px;
     font-weight: 500;
@@ -51,7 +50,6 @@ label {
   }
   
   .btn-color-mode-switch>label.btn-color-mode-switch-inner:after {
-    content: attr(data-off);
     width: 70px;
     height: 28px;
     background: #fff;
@@ -71,13 +69,11 @@ label {
   }
   
   .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:after {
-    content: attr(data-on);
     left: 71.8px;
     background: #3c3c3c;
   }
   
   .btn-color-mode-switch input[type="checkbox"]:checked+label.btn-color-mode-switch-inner:before {
-    content: attr(data-off);
     right: auto;
     left: 20px;
   }
