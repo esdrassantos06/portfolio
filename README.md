@@ -1,4 +1,4 @@
-# Esdras' Portfolio
+# Esdras's Portfolio
 
 This is my personal portfolio, built with **React**, **Vite**, and **Tailwind CSS**. Visit the website to learn more about my projects, skills, and experiences.
 
