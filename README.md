@@ -50,7 +50,7 @@ This is my personal portfolio, built with **React**, **Vite**, and **Tailwind CS
 
 Here are some screenshots of my portfolio:
 
-![Home Page](./assets/screenshot.png)
+![Home Page](.scr/assets/screenshot.png)
 
 ## 💬 Feedback
 
