@@ -32,7 +32,7 @@ const Navbar = () => {
     useEffect(() => {
         if (!isOpen) {
             const sections = document.querySelectorAll('section');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -125,7 +125,7 @@ const Navbar = () => {
                                         translate="no"
                                         className={`px-4 py-2 text-md ${activeSection === section ? 'text-mypurple' : darkMode ? 'text-white' : 'text-gray-700'} group`}
                                         href={`#${section}`}
-                                        onClick={() => setIsOpen(false)} // Fecha o menu ao clicar em um link
+                                        onClick={() => setIsOpen(false)}
                                     >
                                         {section.charAt(0).toUpperCase() + section.slice(1)}
                                     </a>

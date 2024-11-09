@@ -9,15 +9,15 @@ import {
 
 import Home from './pages/Home.jsx';
 import Contact from './pages/Contact.jsx';
-import Layout from './components/Layout'; // Importe o Layout
+import Layout from './components/Layout';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />, // Use o Layout como elemento pai
+    element: <Layout />,
     children: [
       {
-        index: true, // Rota padrão
+        index: true,
         element: <Home />,
       },
       {

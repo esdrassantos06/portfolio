@@ -13,13 +13,13 @@ This is my personal portfolio, built with **React**, **Vite**, and **Tailwind CS
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/your-username/your-portfolio.git
+    git clone https://github.com/esdrassantos06/portfolio.git
     ```
 
 2. Navigate to the project folder:
 
     ```bash
-    cd your-portfolio
+    cd portfolio
     ```
 
 3. Install the dependencies:
@@ -51,6 +51,7 @@ This is my personal portfolio, built with **React**, **Vite**, and **Tailwind CS
 Here are some screenshots of my portfolio:
 
 ![Home Page](./src/assets/screenshot.png)
+![Home Page Mobile](./src/assets/screenshotMobile.png)
 
 ## 💬 Feedback
 
