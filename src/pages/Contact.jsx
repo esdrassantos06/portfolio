@@ -49,7 +49,7 @@ const Contact = () => {
         <form
           onSubmit={handleSubmit(onSubmit)}
           style={{ width: '80%' }}
-          className="w-full h-screen mx-auto p-8 place-content-center rounded-xl shadow-lg border-solid border border-[#F2F2F2] dark:border-[#1F1F1F]"
+          className="w-full h-dvh mx-auto p-8 place-content-center rounded-xl shadow-lg border-solid border border-[#F2F2F2] dark:border-[#1F1F1F]"
         >
           <div className="mb-6">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">

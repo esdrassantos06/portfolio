@@ -59,7 +59,7 @@ const Navbar = () => {
                 <div className='flex sm:mr-6 sm:w-1/2 flex-row sm:justify-start items-center'>
                     <a href='#' translate="no" className='text-mypurple inter md:mx-10 text-xl font-medium'>Es<span className='text-gray-800 dark:text-white'>dras</span></a>
 
-                    <ul className='hidden pr-3 md:flex flex-row justify-center items-center gap-6'>
+                    <ul className='hidden pr-3 lg:flex flex-row justify-center items-center gap-6'>
                         {['home', 'about', 'skills', 'projects'].map(section => (
                             <li key={section}>
                                 <a
@@ -120,7 +120,7 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='md:hidden flex'>
+                    <div className='lg:hidden flex'>
                         <button onClick={toggleNavbar}>
                             {isOpen ? <X size={30} className='dark:stroke-white' /> : <Menu size={30} className='dark:stroke-white' />}
                         </button>
@@ -131,7 +131,7 @@ const Navbar = () => {
 
             {isOpen && (
                 <div className='w-full flex items-center justify-center'>
-                    <nav className='__navbar-responsive text-xl dark:bg-custom-black border-t border-gray-300 border-solid  dark:border-gray-700 z-[99] relative bg-mist-gray flex w-[90%] max-w-[100vw] h-screen text-center justify-center p-4 md:hidden'>
+                    <nav className='__navbar-responsive text-xl dark:bg-custom-black border-t border-gray-300 border-solid  dark:border-gray-700 z-[99] relative bg-mist-gray flex w-[90%] max-w-[100vw] h-dvh text-center justify-center p-4 lg:hidden'>
                         <ul className={`poppins-font flex flex-col gap-1 space-y-2`}>
                             {['home', 'about', 'skills', 'projects'].map(section => (
                                 <li key={section}>

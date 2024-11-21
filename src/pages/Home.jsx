@@ -9,36 +9,36 @@ import { motion } from 'framer-motion';
 
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
-
     const [isBlurred, setIsBlurred] = useState(false);
-
+    
     useEffect(() => {
         const handleScroll = () => {
             const homeSection = document.getElementById('home');
-            const homeRect = homeSection.getBoundingClientRect();
             
-            const isBeyondHalfVisible = homeRect.bottom < window.innerHeight * 0.5 || homeRect.top > window.innerHeight * 0.5;
-            setIsBlurred(isBeyondHalfVisible);
+            if (homeSection) {
+                const homeRect = homeSection.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                const scrollPosition = window.scrollY;
+            setIsVisible(scrollPosition > window.innerHeight * 0.5);
+
+                const isBeyondHalfVisible = homeRect.bottom < viewportHeight * 0.5 || homeRect.top > viewportHeight * 0.5;
+                setIsBlurred(isBeyondHalfVisible);
+            }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const homeSection = document.getElementById('home');
-            const homeRect = homeSection.getBoundingClientRect();
-
-            const isAtHomeSection = homeRect.top >= 0 && homeRect.bottom <= window.innerHeight;
-
-            setIsVisible(!isAtHomeSection);
+        const throttledScroll = () => {
+            let timeoutId;
+            if (!timeoutId) {
+                timeoutId = setTimeout(() => {
+                    handleScroll();
+                    timeoutId = null;
+                }, 200);
+            }
         };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+    
+        window.addEventListener('scroll', throttledScroll);
+        return () => window.removeEventListener('scroll', throttledScroll);
     }, []);
 
     return (
@@ -49,7 +49,7 @@ const Home = () => {
             <main className='w-full h-full'>
 
             <motion.section
-                    className={`__main-container max-lg:pt-32 flex h-svh bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap ${isBlurred ? 'blur-sm' : 'blur-0'}`}
+                    className={`__main-container max-lg:pt-32 max-sm:pb-96 flex h-dvh bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap ${isBlurred ? 'blur-sm' : 'blur-0'}`}
                     id="home"
                     initial={{ opacity: 1 }}
                     animate={{ opacity: isBlurred ? 0.8 : 1 }}
@@ -64,13 +64,13 @@ const Home = () => {
                             have 1 year of experience. I'm currently living in Portugal.</p>
                     </article>
                     <aside
-                        className="z-10 mr-24 relative w-2/4 max-lg:hidden select-none bg-gray-950 rounded-full flex justify-center items-center">
+                        className="z-10 mr-24 relative w-2/4 hidden select-none bg-gray-950 rounded-full lg:flex justify-center items-center">
                         <img className="object-cover rounded-full w-full max-sm:w-3/4" src={myselfImage}
                             alt="Profile" />
                     </aside>
                     <div className='__some-buttons z-10'>
                         <a href='#about'
-                            className="btn-scroll flex items-center justify-center bg-transparent border-none left-1/2 bottom-12 absolute w-8 h-12 max-md:hidden"
+                            className="btn-scroll max-lg:hidden flex items-center justify-center bg-transparent border-none left-1/2 bottom-12 absolute w-8 h-12 max-md:hidden"
                             id="scrollButton">
                             <span className="scroll w-1 h-3 rounded-xl"></span>
                         </a>
@@ -130,7 +130,7 @@ const Home = () => {
 
                     <section
                         id="skills"
-                        className='__skills mt-[-20rem] max-sm:mt-[-15rem] pt-28 max-sm:pt-24 pb-4 flex justify-center h-fit items-center max-sm:w-[90%] mx-auto w-full'>
+                        className='__skills -mt-56 pt-28 max-sm:pt-24 pb-4 flex justify-center h-fit items-center max-sm:w-[90%] mx-auto w-full'>
                         <div className='container shadow-md shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg h-full'>
                             <div className='__box mt-20 mb-24 w-full h-full'>
                                 <div className='__content max-sm:block flex justify-around items-stretch flex-row w-full h-full text-black'>

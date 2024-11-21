@@ -192,3 +192,12 @@ label {
 html {
   scroll-behavior: smooth;
 }
+
+@media all and (max-width:1023px) and (orientation:landscape) {
+  .__main-container{
+    padding-bottom: 23rem;
+  }
+  #about{
+    padding-bottom: 35rem;
+  }
+}

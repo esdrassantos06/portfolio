@@ -154,7 +154,7 @@ const ProjectGrid = () => {
                         <div className='flex w-full items-center mt-2 justify-around'>
 
                             <a href='https://github.com/' target='_blank'
-                                className='mt-4 bg-mypurple cursor-pointer text-white py-2 px-4 rounded hover:bg-purple-800 duration-300 transition'>Link</a>
+                                className='mt-4 bg-mypurple cursor-pointer text-white py-2 px-4 rounded hover:bg-purple-800 duration-300 transition'>Github</a>
 
                             <a href='https://github.com/' target='_blank'
                                 className='mt-4 bg-mypurple cursor-pointer text-white py-2 px-4 rounded hover:bg-purple-800 duration-300 transition'>Deploy</a>
