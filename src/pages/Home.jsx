@@ -194,6 +194,7 @@ const Home = () => {
                                         <div className='poppins-font mb-28 max-sm:mb-10 flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Courses:</h1>
                                             <p className='text-base font-medium text-center dark:text-white' translate='no'>HTML, CSS, JavaScript, React</p>
+                                            <p className='text-base font-medium mt-2 text-center dark:text-white' translate='no'>Python, Machine Learning, AI, POO</p>
                                         </div>
                                         <div className='poppins-font flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Institution:</h1>
