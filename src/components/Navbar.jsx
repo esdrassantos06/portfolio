@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-import { Link } from 'react-router-dom';
 import { Menu, X, Moon, Sun } from 'lucide-react'
 
 const Navbar = () => {
@@ -77,9 +76,6 @@ const Navbar = () => {
 
                 </div>
                 <div className='flex sm:w-1/2 flex-row gap-2 items-center justify-end'>
-                    <div className='__contact-button hidden md:block'>
-                        <Link to="/contact" className="text-md mr-4 p-2 hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple border-mypurple transition-colors duration-300 w-44 text-zinc-50 bg-mypurple rounded-xl poppins-font font-medium">Contact-me!</Link>
-                    </div>
 
                     <div className='__darkmode-button md:mr-8 mr-4 items-center justify-center flex-row'>
                         <div className='flex items-center'>

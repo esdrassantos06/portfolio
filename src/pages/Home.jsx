@@ -6,6 +6,8 @@ import { SquareChevronRight, Layers3, BookOpen } from 'lucide-react';
 import ProjectGrid from '../components/Projects'
 import Footer from '../components/Footer'
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import CV from '../assets/cv/esdrasCV.pdf';
 
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -60,8 +62,12 @@ const Home = () => {
                         <h1 className="select-none text-[50pt] font-bold poppins-font dark:text-white max-md:text-[45pt]">Hi, I'm <span
                             className="text-mypurple" translate="no">Esdras</span></h1>
                         <WritingEffect />
-                        <p className="max-w-96 mt-4 dark:text-white poppins-font max-md:text-lg">I'm Esdras, a FrontEnd Developer. I'm 18 years old and
+                        <p className="max-w-96 mb-6 mt-4 dark:text-white poppins-font max-md:text-lg">I'm Esdras, a FrontEnd Developer. I'm 18 years old and
                             have 1 year of experience. I'm currently living in Portugal.</p>
+                            <div className='__contact-buttons'>
+                        <Link to="/contact" className="text-md mr-4 p-2 hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple border-mypurple transition-colors duration-300 w-44 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium">Contact-me!</Link>
+                        <a href={CV} download='Esdras Resume' className="text-md mr-4 p-2 hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple border-mypurple transition-colors duration-300 w-44 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium">CV</a>
+                    </div>
                     </article>
                     <aside
                         className="z-10 mr-24 relative w-2/4 hidden select-none bg-gray-950 rounded-full lg:flex justify-center items-center">
