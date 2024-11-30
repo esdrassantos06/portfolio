@@ -56,7 +56,7 @@ const Navbar = () => {
         <>
             <nav className="navbar flex w-full max-w-[100vw] flex-row p-8 sm:p-10 transition-all ease-in duration-150 justify-between gap-10">
                 <div className='flex sm:mr-6 sm:w-1/2 flex-row sm:justify-start items-center'>
-                    <a href='#' translate="no" className='text-mypurple inter md:mx-10 text-xl font-medium'>Es<span className='text-gray-800 dark:text-white'>dras</span></a>
+                    <a href='#' translate="no" title='Home' className='text-mypurple inter md:mx-10 text-xl font-medium'>Es<span className='text-gray-800 dark:text-white'>dras</span></a>
 
                     <ul className='hidden pr-3 lg:flex flex-row justify-center items-center gap-6'>
                         {['home', 'about', 'skills', 'projects'].map(section => (

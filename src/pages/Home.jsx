@@ -12,8 +12,31 @@ import CV from '../assets/cv/esdrasCV.pdf';
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [isBlurred, setIsBlurred] = useState(false);
+
+    const [designTools, setDesignTools] = useState([]);
+
+    const [tools, setTools] = useState([]);
     
     useEffect(() => {
+
+        let designToolsName = ["Figma, Sketch"];
+
+        const DesignToolsArray = designToolsName[0].split(', ');
+
+        setDesignTools(DesignToolsArray);
+
+
+
+
+
+
+        let devTools = ['VS Code, Tailwind CSS, Bulma, Bootstrap, Github, React, NodeJS, PyCharm, Anaconda'];
+        
+        const toolsArray = devTools[0].split(', ');
+
+        setTools(toolsArray);
+
+
         const handleScroll = () => {
             const homeSection = document.getElementById('home');
             
@@ -65,8 +88,8 @@ const Home = () => {
                         <p className="max-w-96 mb-6 mt-4 dark:text-white poppins-font max-md:text-lg">I'm Esdras, a FrontEnd Developer. I'm 18 years old and
                             have 1 year of experience. I'm currently living in Portugal.</p>
                             <div className='__contact-buttons flex'>
-                        <Link to="/contact" className="text-md text-center mr-4 p-2 hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple border-mypurple transition-colors duration-300 w-44 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium">Contact-me!</Link>
-                        <a href={CV} download='Esdras Resume' className="text-md text-center mr-4 p-2 hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple border-mypurple transition-colors duration-300 w-44 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium">CV</a>
+                        <Link to="/contact" className="text-md text-center mr-4 p-2 hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple border-mypurple transition-colors duration-300 w-44 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium" translate='no'>Contact-me!</Link>
+                        <a href={CV} download='Esdras Resume' className="text-md text-center mr-4 p-2 hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple border-mypurple transition-colors duration-300 w-44 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium" translate='no'>CV</a>
                     </div>
                     </article>
                     <aside
@@ -156,8 +179,9 @@ const Home = () => {
                                         <div className='column poppins-font flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white text-center'>Design Tools:</h1>
                                             <ul className='flex flex-col items-center justify-center' translate='no'>
-                                                <li className='text-base font-medium dark:text-white text-center'>Figma</li>
-                                                <li className='text-base font-medium dark:text-white text-center'>Sketch</li>
+                                            {designTools.map((designTools, index) => (
+                                                <li className='text-base font-medium dark:text-white text-center' key={index}>{designTools}</li>
+                                            ))}
                                             </ul>
                                         </div>
                                     </div>
@@ -177,13 +201,9 @@ const Home = () => {
                                         <div className='poppins-font max-sm:mb-4 flex flex-col items-center justify-center'>
                                             <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Dev Tools:</h1>
                                             <ul className='flex flex-col items-center justify-center' translate='no'>
-                                                <li className='text-base font-medium dark:text-white text-center'>VS Code</li>
-                                                <li className='text-base font-medium dark:text-white text-center'>Tailwind CSS</li>
-                                                <li className='text-base font-medium dark:text-white text-center'>Bulma</li>
-                                                <li className='text-base font-medium dark:text-white text-center'>Bootstrap</li>
-                                                <li className='text-base font-medium dark:text-white text-center'>Github</li>
-                                                <li className='text-base font-medium dark:text-white text-center'>React</li>
-                                                <li className='text-base font-medium dark:text-white text-center'>Node.js</li>
+                                            {tools.map((tools, index) => (
+                                                <li className='text-base font-medium dark:text-white text-center' key={index}>{tools}</li>
+                                            ))}
                                             </ul>
                                         </div>
                                     </div>

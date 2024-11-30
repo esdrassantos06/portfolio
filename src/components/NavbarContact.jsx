@@ -26,7 +26,7 @@ const NavbarContact = () => {
 
     return (
         <nav className="navbar flex max-w-[100vw] w-full flex-row md:gap-96 p-10 transition ease-in duration-150 bg-mist-gray dark:bg-custom-black justify-between">
-            <a href='/' translate="no" className='text-mypurple inter md:mx-10 text-xl font-medium'>Es<span className='text-gray-800 dark:text-white'>dras</span></a>
+            <a href='/' title='Home' translate="no" className='text-mypurple inter md:mx-10 text-xl font-medium'>Es<span className='text-gray-800 dark:text-white'>dras</span></a>
             <div className='flex flex-row gap-2 items-center justify-center'>
 
                 <div className='__darkmode-button mr-8 max-[400px]:mr-4 flex flex-row'>
