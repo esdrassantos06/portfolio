@@ -25,7 +25,7 @@ This is my personal portfolio, built with **React**, **Vite**, and **Tailwind CS
 3. Install the dependencies:
 
     ```bash
-    npm install
+    npm i
     ```
 
 4. Start the development server:
