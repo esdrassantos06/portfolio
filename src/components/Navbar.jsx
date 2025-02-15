@@ -127,7 +127,7 @@ const Navbar = () => {
 
             {isOpen && (
                 <div className='w-full flex items-center justify-center'>
-                    <nav className='__navbar-responsive text-xl dark:bg-custom-black border-t border-gray-300 border-solid  dark:border-gray-700 z-[99] relative bg-mist-gray flex w-[90%] max-w-[100vw] h-dvh text-center justify-center p-4 lg:hidden'>
+                    <nav className='__navbar-responsive text-xl dark:bg-custom-black border-t border-gray-300 border-solid  dark:border-gray-700 z-99 relative bg-mist-gray flex w-[90%] max-w-[100vw] h-dvh text-center justify-center p-4 lg:hidden'>
                         <ul className={`poppins-font flex flex-col gap-1 space-y-2`}>
                             {['home', 'about', 'skills', 'projects'].map(section => (
                                 <li key={section}>

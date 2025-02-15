@@ -7,7 +7,7 @@ const Footer = () => {
                 <div>
                     Developed By Esdras © {new Date().getFullYear()} All rights reserved.
                 </div>
-                <div className="flex justify-center space-x-6">
+                <div className="flex justify-center gap-6">
                     <a href="https://github.com/esdrassantos06" target="_blank" className="text-mypurple hover:text-purple-600 dark:text-white dark:hover:text-slate-400 transition duration-300">
                         <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                             <path

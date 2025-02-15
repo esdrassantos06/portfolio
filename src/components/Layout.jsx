@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import LoadingScreen from './LoadingScreen';
 import { animated, useSpring } from '@react-spring/web';

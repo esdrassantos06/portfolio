@@ -68,13 +68,13 @@ const Home = () => {
 
     return (
         <>
-            <header className='fixed bg-mist-gray w-full max-w-[100vw] dark:bg-custom-black z-[999]'>
+            <header className='fixed bg-mist-gray w-full max-w-[100vw] dark:bg-custom-black z-999'>
                 <Navbar />
             </header>
             <main className='w-full h-full'>
 
             <motion.section
-                    className={`__main-container max-lg:pt-32 max-sm:pb-96 flex h-dvh bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap ${isBlurred ? 'blur-sm' : 'blur-0'}`}
+                    className={`__main-container max-lg:pt-32 max-sm:pb-96 flex h-dvh bg-mist-gray dark:bg-custom-black flex-row w-full items-center max-lg:flex-wrap ${isBlurred ? 'blur-xs' : 'blur-0'}`}
                     id="home"
                     initial={{ opacity: 1 }}
                     animate={{ opacity: isBlurred ? 0.8 : 1 }}
@@ -143,7 +143,7 @@ const Home = () => {
 
                     {isVisible && (
                         <button
-                            className={`bg-mypurple group transition-all duration-500 ease-in-out hover:duration-300 poppins-font w-[50px] h-[50px] border-0 font-semibold flex items-center justify-center cursor-pointer overflow-hidden fixed opacity-100 bottom-5 right-5 rounded-full z-[98] hover:items-center hover:w-36 hover:rounded-[50px]`}
+                            className={`bg-mypurple group transition-all duration-500 ease-in-out hover:duration-300 poppins-font w-[50px] h-[50px] border-0 font-semibold flex items-center justify-center cursor-pointer overflow-hidden fixed opacity-100 bottom-5 right-5 rounded-full z-98 hover:items-center hover:w-36 hover:rounded-[50px]`}
                             id="backtoTop"
                             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         >
