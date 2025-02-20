@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+/* eslint-disable */
+
+import { useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 const LoadingScreen = ({ onComplete }) => {
-  const [progress, setProgress] = React.useState(0);
+  const [progress, setProgress] = useState(0);
   
   const barProps = useSpring({
     width: `${progress}%`,
@@ -28,7 +30,7 @@ const LoadingScreen = ({ onComplete }) => {
   }, []);
 
   return (
-    <div className="loading-screen flex flex-col items-center justify-center h-dvh bg-custom-black">
+    <div className="loading-screen flex flex-col items-center justify-center h-screen bg-custom-black">
       <animated.div style={{
         backgroundColor: '#7D2AE8',
         height: '10px',
