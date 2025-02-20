@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Mockup1Pc from '../assets/mockups/mockup1-mac.png';
 import Mockup1Phone from '../assets/mockups/mockup1-phone.png';
 
@@ -8,31 +8,41 @@ const ProjectGrid = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     class Project {
-        constructor(id, title, pcMockup, mobileMockup, description, frameworks, url) {
+        constructor(id, title, pcMockup, mobileMockup, description, frameworks, github, deploy) {
             this.id = id;
             this.title = title;
             this.pcMockup = pcMockup;
             this.mobileMockup = mobileMockup;
             this.description = description;
             this.frameworks = frameworks;
-            this.url = url;
+            this.github = github;
+            this.deploy = deploy;
         }
     }
-    
+
     const projects = [
-        new Project(1, 'Project 1', Mockup1Pc, Mockup1Phone, 'A portfolio project using React and Tailwind CSS.', 'React, Tailwind CSS', 'https://example.com/project1'),
-        new Project(2, 'Project 2', Mockup1Pc, Mockup1Phone, 'An e-commerce site built with Next.js and styled-components.', 'Next.js, styled-components', 'https://example.com/project2'),
-        new Project(3, 'Project 3', Mockup1Pc, Mockup1Phone, 'A custom blog template created with Gatsby and GraphQL.', 'Gatsby, GraphQL', 'https://example.com/project3'),
-        new Project(4, 'Project 4', Mockup1Pc, Mockup1Phone, 'A custom dashboard built with Vue and Tailwind CSS.', 'Vue, Tailwind CSS', 'https://example.com/project4'),
-        new Project(5, 'Project 5', Mockup1Pc, Mockup1Phone, 'A personal finance tracker made with Angular and Firebase.', 'Angular, Firebase', 'https://example.com/project5'),
-        new Project(6, 'Project 6', Mockup1Pc, Mockup1Phone, 'A real-time chat app built with React and Socket.io.', 'React, Socket.io', 'https://example.com/project6'),
-        new Project(7, 'Project 7', Mockup1Pc, Mockup1Phone, 'A task management tool created using Svelte and Tailwind CSS.', 'Svelte, Tailwind CSS', 'https://example.com/project7'),
-        new Project(8, 'Project 8', Mockup1Pc, Mockup1Phone, 'An AI-powered chatbot built with Next.js and OpenAI API.', 'Next.js, OpenAI API', 'https://example.com/project8'),
-        new Project(9, 'Project 9', Mockup1Pc, Mockup1Phone, 'A multi-language blog developed with Astro and Markdown.', 'Astro, Markdown', 'https://example.com/project9')
+        new Project(1, 'Project 1', Mockup1Pc, Mockup1Phone, 'A portfolio project using React and Tailwind CSS.', 'React, Tailwind CSS', 'https://example.com/project1', 'https://deploy.com/project1'),
+
+        new Project(2, 'Project 2', Mockup1Pc, Mockup1Phone, 'An e-commerce site built with Next.js and styled-components.', 'Next.js, styled-components', 'https://example.com/project2', 'https://deploy.com/project2'),
+
+        new Project(3, 'Project 3', Mockup1Pc, Mockup1Phone, 'A custom blog template created with Gatsby and GraphQL.', 'Gatsby, GraphQL', 'https://example.com/project3', 'https://deploy.com/project3'),
+
+        new Project(4, 'Project 4', Mockup1Pc, Mockup1Phone, 'A custom dashboard built with Vue and Tailwind CSS.', 'Vue, Tailwind CSS', 'https://example.com/project4', 'https://deploy.com/project4'),
+
+        new Project(5, 'Project 5', Mockup1Pc, Mockup1Phone, 'A personal finance tracker made with Angular and Firebase.', 'Angular, Firebase', 'https://example.com/project5', 'https://deploy.com/project5'),
+
+        new Project(6, 'Project 6', Mockup1Pc, Mockup1Phone, 'A real-time chat app built with React and Socket.io.', 'React, Socket.io', 'https://example.com/project6', 'https://deploy.com/project6'),
+
+        new Project(7, 'Project 7', Mockup1Pc, Mockup1Phone, 'A task management tool created using Svelte and Tailwind CSS.', 'Svelte, Tailwind CSS', 'https://example.com/project7', 'https://deploy.com/project7'),
+
+        new Project(8, 'Project 8', Mockup1Pc, Mockup1Phone, 'An AI-powered chatbot built with Next.js and OpenAI API.', 'Next.js, OpenAI API', 'https://example.com/project8', 'https://deploy.com/project8'),
+
+        new Project(9, 'Project 9', Mockup1Pc, Mockup1Phone, 'A multi-language blog developed with Astro and Markdown.', 'Astro, Markdown', 'https://example.com/project9', 'https://deploy.com/project9'),
     ];
 
 
-    const visibleProjects = showMore ? projects : projects.slice(0, 6);
+
+    const visibleProjects = showMore ? projects : projects.slice(0, 3);
 
     const handleProjectClick = (project) => {
         setSelectedProject(project);
@@ -75,7 +85,7 @@ const ProjectGrid = () => {
                 ))}
             </div>
 
-            {projects.length > 6 && (
+            {projects.length > 3 && (
                 <button
                     className='mt-6 bg-mypurple text-white inter font-semibold py-3 px-6 rounded-sm hover:bg-purple-800 duration-300 transition'
                     onClick={() => setShowMore(!showMore)}
@@ -93,10 +103,10 @@ const ProjectGrid = () => {
                         <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>{selectedProject.frameworks}</p>
                         <div className='flex w-full items-center mt-2 justify-around'>
 
-                            <a href='https://github.com/' target='_blank'
+                            <a href={selectedProject.github} target='_blank'
                                 className='mt-4 bg-mypurple cursor-pointer text-white py-2 px-4 rounded-sm hover:bg-purple-800 duration-300 transition'>Github</a>
 
-                            <a href='https://github.com/' target='_blank'
+                            <a href={selectedProject.deploy} target='_blank'
                                 className='mt-4 bg-mypurple cursor-pointer text-white py-2 px-4 rounded-sm hover:bg-purple-800 duration-300 transition'>Deploy</a>
 
                         </div>
