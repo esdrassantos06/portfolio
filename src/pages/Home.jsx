@@ -5,7 +5,7 @@ import myselfImage from '../assets/images/myself.png'
 import { SquareChevronRight, Layers3, BookOpen } from 'lucide-react';
 import ProjectGrid from '../components/Projects'
 import Footer from '../components/Footer'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import CV from '../assets/cv/esdrasCV.pdf';
 
 const Home = () => {
