@@ -1,8 +1,7 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import NavbarContact from '../components/NavbarContact';
+import Navbar from '../components/Navbar';
 
 const Contact = () => {
   const validationSchema = Yup.object().shape({
@@ -43,9 +42,9 @@ const Contact = () => {
   return (
     <div className="contact poppins-font bg-mist-gray dark:bg-custom-black">
       <header className='fixed w-full'>
-        <NavbarContact />
+        <Navbar />
       </header>
-      <main className="h-svh w-full flex justify-center items-center py-8">
+      <main className="h-screen w-full flex justify-center items-center py-8">
         <form
           onSubmit={handleSubmit(onSubmit)}
           style={{ width: '80%' }}

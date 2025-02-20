@@ -48,9 +48,9 @@ const Home = () => {
 
     return (
         <>
-            <header className='fixed bg-mist-gray w-full max-w-[100vw] dark:bg-custom-black z-999'>
+            
                 <Navbar />
-            </header>
+
             <main className='w-full h-full'>
 
                 <section
