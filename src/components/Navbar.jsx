@@ -61,7 +61,7 @@ const Navbar = () => {
 
     return (
         <>
-            <header className='fixed bg-mist-gray w-full max-w-screen dark:bg-custom-black z-999'>
+            <header className='fixed bg-mist-gray w-full max-w-screen h-30 dark:bg-custom-black z-999'>
                 <nav className="navbar flex w-full flex-row p-8 sm:p-10 transition-all ease-in duration-150 justify-between gap-10">
                     <div className='flex sm:mr-6 sm:w-1/2 flex-row sm:justify-start items-center'>
                         <Link to='/' translate="no" title='Home' className='text-mypurple inter md:mx-10 text-xl font-medium'>Es<span className='text-gray-800 dark:text-white'>dras</span></Link>
@@ -137,7 +137,7 @@ const Navbar = () => {
 
                 {isOpen && (
                     <div className='w-full flex items-center justify-center'>
-                        <nav className='__navbar-responsive text-xl dark:bg-custom-black border-t border-gray-300 border-solid  dark:border-gray-700 z-99 relative bg-mist-gray flex w-[90%] max-w-[100vw] h-dvh text-center justify-center p-4 lg:hidden'>
+                        <nav className={`__navbar-responsive text-xl dark:bg-custom-black border-t border-gray-300 border-solid  dark:border-gray-700 z-99 relative bg-mist-gray flex w-full max-w-screen h-screen text-center justify-center p-4 lg:hidden ${isOpen ? 'animate-scale-in-ver-top' : 'animate-scale-out-ver-top'}`}>
                             <ul className={`poppins-font flex flex-col gap-1 space-y-2`}>
                                 {['home', 'about', 'skills', 'projects'].map(section => (
                                     <li key={section}>
@@ -154,7 +154,6 @@ const Navbar = () => {
                             </ul>
                         </nav>
                     </div>
-
                 )}
             </header>
         </>

@@ -2,8 +2,8 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const WritingEffect = () => {
   return (
-    <div className="typewriter  mx-0 my-auto">
-      <h2 className="select-none text-4xl dark:text-white max-sm:text-3xl" translate='no'>
+    <div className="typewriter mx-0 my-auto">
+      <h2 className="select-none sm:text-3xl dark:text-white text-2xl" translate='no'>
         <Typewriter
           words={['FrontEnd Developer']}
           loop={true}

@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { useNavigate } from 'react-router';
 import emailjs from '@emailjs/browser'
 import { Loader } from 'lucide-react';
 import Navbar from '../components/Navbar';
@@ -6,6 +7,8 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 const Contact = () => {
+
+  const navigate = useNavigate();
 
   const schema =
     z.object({
@@ -36,7 +39,7 @@ const Contact = () => {
         'ti16g7ix8mDElaSte'
       );
 
-      alert('Message sent successfully');
+      navigate('/thanks');
     }
     catch (error) {
       console.error('Error details:', data.error);
@@ -49,7 +52,7 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <div className="contact poppins-font h-screen w-full flex flex-col items-center justify-center bg-mist-gray dark:bg-custom-black">
+      <div className="contact pt-30 poppins-font h-screen w-full flex flex-col items-center justify-center bg-mist-gray dark:bg-custom-black">
 
 
         <form

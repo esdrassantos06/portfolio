@@ -50,37 +50,37 @@ const Home = () => {
 
     return (
         <>
-            
-                <Navbar />
 
-            <main className='w-full h-full'>
+            <Navbar />
+
+            <main className='pt-30'>
 
                 <section
-                    className={`__main-container relative flex min-h-screen bg-mist-gray dark:bg-custom-black flex-row w-full items-center`}
+                    className={`__main-container min-h-screen h-fit relative grid gap-20 items-center place-content-center md:grid-cols-2 bg-mist-gray dark:bg-custom-black flex-row w-full `}
                     id="home"
                 >
-                    <article
-                        className="flex-1/2 max-sm:mt-[5vh] flex flex-col justify-start pl-4 md:pl-12 items-start w-full poppins-font">
+                    <article className="flex flex-col pl-4 md:pl-12 items-start w-full poppins-font">
                         <h1 className="select-none md:text-7xl text-6xl font-bold poppins-font dark:text-white">Hi, I&apos;m <span
                             className="text-mypurple" translate="no">Esdras</span></h1>
                         <WritingEffect />
 
                         <p className="max-w-96 py-4 dark:text-white poppins-font text-base md:text-lg">I&apos;m Esdras, a FrontEnd Developer. I&apos;m 18 years old and
                             have 1 year of experience. I&apos;m currently living in Portugal.</p>
-                        <div className='__contact-buttons gap-4 flex w-full  max-sm:flex-wrap'>
+                        <div className='__contact-buttons gap-4 flex w-full max-sm:flex-wrap'>
                             <Link to="/contact" className="text-md text-center h-12 flex items-center justify-center hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple active:text-mypurple active:bg-transparent border-mypurple transition-colors duration-300 sm:w-44 w-30  text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium" translate='no'>Contact-me!</Link>
 
                             <a href={CV} download='Esdras Resume' className="text-md text-center h-12 flex items-center justify-center hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple active:text-mypurple active:bg-transparent border-mypurple transition-colors duration-300 sm:w-44 w-30 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium" translate='no'>CV</a>
                         </div>
                     </article>
+
                     <aside
-                        className="z-10 mr-24 flex-1/2 hidden select-none rounded-full lg:flex justify-center items-center">
-                        <img className="object-cover rounded-full w-3/4" src={myselfImage}
-                            alt="Profile" />
+                        className="z-10 select-none rounded-full flex justify-center items-center">
+                        <img className="object-cover rounded-full w-[80%]" src={myselfImage} alt="Profile" />
                     </aside>
+
                     <div className='__some-buttons z-10'>
                         <a href='#about'
-                            className="btn-scroll max-lg:hidden flex items-center justify-center bg-transparent border-none left-1/2 bottom-12 absolute w-8 h-12 max-md:hidden"
+                            className="btn-scroll lg:flex items-center justify-center bg-transparent border-none left-1/2 bottom-12 absolute w-8 h-12 max-md:hidden"
                             id="scrollButton">
                             <span className="scroll w-1 h-3 rounded-xl"></span>
                         </a>
@@ -127,7 +127,7 @@ const Home = () => {
                     </button>
                 )} {/* Back to top button */}
 
-                <section id="about" className={`__about-container flex h-[90vh] bg-about-purple flex-col w-full items-center `}>
+                <section id="about" className={`__about-container flex h-[60vh] bg-about-purple flex-col w-full items-center `}>
                     <div className='mt-32 flex flex-col justify-center items-center poppins-font'>
                         <h1 className='about-main-title text-center poppins-font font-bold md:text-7xl text-5xl select-none text-white'>About <span
                             className="text-mypurple bg-mist-gray dark:bg-custom-black">Me</span></h1>
@@ -139,7 +139,7 @@ const Home = () => {
 
                 <section
                     id="skills"
-                    className='__skills pb-4 lg:-mt-90 px-4 md:-mt-70 sm:-mt-60 -mt-30 flex justify-center h-fit items-center max-sm:w-[90%] mx-auto w-full'>
+                    className='__skills pb-4 px-4 flex justify-center items-center max-sm:w-[90%] mx-auto w-full'>
                     <div className='container shadow-md shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg h-full'>
                         <div className='__box mt-20 mb-24 w-full h-full'>
                             <div className='__content max-sm:block flex justify-around items-stretch flex-row w-full h-full text-black'>

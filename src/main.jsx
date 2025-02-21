@@ -10,6 +10,7 @@ import {
 import Home from './pages/Home.jsx';
 import Contact from './pages/Contact.jsx';
 import Layout from './components/Layout';
+import Thanks from './pages/Thanks.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
+      },
+      {
+        path: 'thanks',
+        element: <Thanks />,
       },
     ],
   },

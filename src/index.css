@@ -7,6 +7,46 @@
   --color-mypurple: #7d2ae8;
   --color-custom-black: #121212;
   --color-about-purple: #11081f;
+
+  --animate-scale-in-ver-top: scale-in-ver-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+  @keyframes scale-in-ver-top {
+    0% {
+      -webkit-transform: scaleY(0);
+      transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+  }
+
+  --animate-scale-out-ver-top: scale-out-ver-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+
+  @keyframes scale-out-ver-top {
+    0% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+    }
+  }
+
 }
 
 /*
@@ -19,6 +59,7 @@
 */
 
 @layer base {
+
   *,
   ::after,
   ::before,
