@@ -26,7 +26,7 @@ button {
 
 /* Dark Mode Button*/
 
-label {
+.__darkmode- label {
     color: #424242;
   }
   
@@ -187,6 +187,10 @@ label {
 
 html {
   scroll-behavior: smooth;
+}
+/* Contact Form */
+html.dark #name::placeholder, html.dark #email::placeholder, html.dark #message::placeholder{
+  color: hsl(0, 0%, 50%);
 }
 
 @media all and (max-width:1023px) and (orientation:landscape) {

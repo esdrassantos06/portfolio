@@ -1,112 +1,70 @@
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as Yup from 'yup';
 import Navbar from '../components/Navbar';
 
 const Contact = () => {
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
-      .required('Name is required')
-      .min(2, 'Name must be at least 2 characters'),
-    email: Yup.string()
-      .required('Email is required')
-      .email('Email is not valid'),
-    message: Yup.string()
-      .required('Message is required')
-      .min(10, 'Message must be at least 10 characters'),
-  });
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(validationSchema),
-  });
-
-  const onSubmit = async (data) => {
-    const response = await fetch('https://formspree.io/f/xkgwleya', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    if (response.ok) {
-      alert('Message sent successfully!');
-    } else {
-      alert('There was an error sending your message.');
-    }
-  };
 
   return (
-    <div className="contact poppins-font bg-mist-gray dark:bg-custom-black">
-      <header className='fixed w-full'>
-        <Navbar />
-      </header>
-      <main className="h-screen w-full flex justify-center items-center py-8">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          style={{ width: '80%' }}
-          className="w-full h-dvh mx-auto p-8 place-content-center rounded-xl shadow-lg border-solid border border-[#F2F2F2] dark:border-[#1F1F1F]"
-        >
-          <div className="mb-6">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              {...register('name')}
-              className={`w-full p-4 border-2 rounded-lg dark:bg-gray-800 dark:text-white transition duration-300 
-                ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} 
-                focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
-              placeholder="Your Name"
-            />
-            {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
-          </div>
+    <>
+      <Navbar />
+      <div className="contact poppins-font h-screen w-full flex flex-col items-center justify-center bg-mist-gray dark:bg-custom-black">
 
-          <div className="mb-6">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              {...register('email')}
-              className={`w-full p-4 border-2 dark:bg-gray-800 dark:text-white rounded-lg transition duration-300 
-                ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'} 
-                focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
-              placeholder="name@email.com"
-            />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-          </div>
 
-          <div className="mb-6">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              {...register('message')}
-              className={`w-full p-4 border-2 rounded-lg dark:bg-gray-800 dark:text-white  transition duration-300 
-                ${errors.message ? 'border-red-500' && 'dark:border-red-500' : 'border-gray-300 dark:border-gray-600'} 
-                focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
-              rows="4"
-              placeholder="Write a message..."
-            ></textarea>
-            {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300"
+          <form
+            className="p-8 w-[80%] rounded-xl shadow-lg border-solid border dark:border-[#F2F2F2]/20 border-[#1F1F1F]/20"
           >
-            Send Message
-          </button>
-        </form>
-      </main>
-    </div>
+            <div className="mb-6 w-full">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-white mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                className={`w-full p-4 border-2 border-zinc-300 dark:border-zinc-300/50 rounded-lg placeholder:text-black/50 dark:text-white transition duration-300 
+                focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
+                placeholder="Your Name"
+              />
+            </div>
+
+            <div className="mb-6 w-full">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-white  mb-2">
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                className={`w-full p-4 border-2 border-zinc-300 dark:border-zinc-300/50 placeholder:text-black/50  dark:text-white rounded-lg transition duration-300 
+
+                focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
+                placeholder="name@email.com"
+              />
+            </div>
+
+            <div className="mb-6 w-full">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-white mb-2">
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                className={`w-full p-4 border-2 border-zinc-300 dark:border-zinc-300/50 rounded-lg placeholder:text-black/50  dark:text-white transition duration-300 
+
+
+                focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200`}
+                rows="4"
+                placeholder="Write a message..."
+              ></textarea>
+
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-mypurple text-white py-3 rounded-lg hover:bg-purple-800 transition duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+      </div>
+    </>
   );
 };
 

@@ -61,8 +61,8 @@ const Navbar = () => {
 
     return (
         <>
-            <header className='fixed bg-mist-gray w-full max-w-[100vw] dark:bg-custom-black z-999'>
-                <nav className="navbar flex w-full max-w-[100vw] flex-row p-8 sm:p-10 transition-all ease-in duration-150 justify-between gap-10">
+            <header className='fixed bg-mist-gray w-full max-w-screen dark:bg-custom-black z-999'>
+                <nav className="navbar flex w-full flex-row p-8 sm:p-10 transition-all ease-in duration-150 justify-between gap-10">
                     <div className='flex sm:mr-6 sm:w-1/2 flex-row sm:justify-start items-center'>
                         <Link to='/' translate="no" title='Home' className='text-mypurple inter md:mx-10 text-xl font-medium'>Es<span className='text-gray-800 dark:text-white'>dras</span></Link>
 
