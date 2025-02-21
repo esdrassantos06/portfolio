@@ -11,10 +11,6 @@ const Layout = () => {
     setLoading(false);
   };
 
-
-
-
-
   return (
     <div className='App'>
       {loading ? (

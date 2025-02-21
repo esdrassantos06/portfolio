@@ -39,8 +39,8 @@ const Contact = () => {
       alert('Message sent successfully');
     }
     catch (error) {
-      console.error('Error details:', error);  // Isso vai mostrar o erro completo
-      setError('root', { message: `Something Went Wrong. Error Code: ${error}` })
+      console.error('Error details:', data.error);
+      setError('root', { message: `Something Went Wrong. Error Code: ${error.status}` })
     }
 
   }
