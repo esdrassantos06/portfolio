@@ -8,6 +8,8 @@ import Footer from '../components/Footer'
 import { Link } from 'react-router';
 import CV from '../assets/cv/esdrasCV.pdf';
 
+//Dont upgrade to react 19 until react spring is updated
+
 const Home = () => {
     const [showButton, setShowButton] = useState(false); // Back to top button
 
