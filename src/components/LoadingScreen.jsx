@@ -6,7 +6,7 @@ import { useSpring, animated } from '@react-spring/web';
 const LoadingScreen = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
   
-  const barProps = useSpring({
+ const barProps = useSpring({
     width: `${progress}%`,
     from: { width: '0%' },
     config: { duration: 500 },
@@ -16,6 +16,7 @@ const LoadingScreen = ({ onComplete }) => {
           }
         },
       });
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,15 +30,17 @@ const LoadingScreen = ({ onComplete }) => {
     return () => clearInterval(timer);
   }, []);
 
+
   return (
     <div className="loading-screen flex flex-col items-center justify-center h-screen bg-custom-black">
-      <animated.div style={{
+ <animated.div style={{ 
         backgroundColor: '#7D2AE8',
         height: '10px',
         borderRadius: '5px',
         width: barProps.width,
         marginBottom: '50px',
       }} />
+      
     </div>
   );
 };
