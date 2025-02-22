@@ -5,7 +5,7 @@ const WritingEffect = () => {
     <div className="typewriter mx-0 my-auto">
       <h2 className="select-none sm:text-3xl dark:text-white text-2xl" translate='no'>
         <Typewriter
-          words={['FrontEnd Developer']}
+          words={['FullStack Developer']}
           loop={true}
           cursor
           cursorStyle='|'

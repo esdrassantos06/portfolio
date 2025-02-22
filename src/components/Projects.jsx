@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import Mockup1Pc from '../assets/mockups/mockup1-mac.png';
 import Mockup1Phone from '../assets/mockups/mockup1-phone.png';
+import NH_Phone from '../assets/mockups/novahorizonte-phone.png'
+import NH_Pc from '../assets/mockups/novahorizonte-mac.png'
+
+// Use o site https://mockuphone.com/ para fazer os mockups
+// Mockup Mobile é iphone 14
+// Mockup PC é Macbook Air 13, mas tenho que fazer um ajuste no tamanho da imagem
+// a cor dos mockups é Midnight
 
 const ProjectGrid = () => {
     const [showMore, setShowMore] = useState(false);
@@ -21,7 +28,7 @@ const ProjectGrid = () => {
     }
 
     const projects = [
-        new Project(1, 'Project 1', Mockup1Pc, Mockup1Phone, 'A portfolio project using React and Tailwind CSS.', 'React, Tailwind CSS', 'https://example.com/project1', 'https://deploy.com/project1'),
+        new Project(1, 'Construtora Nova Horizonte', NH_Pc, NH_Phone, 'A fictional project focused on civil construction and engineering services.', 'React, Tailwind CSS, Shadcn UI', 'https://github.com/esdrassantos06/novahorizonte', 'https://novahorizonte.vercel.app/'),
 
         new Project(2, 'Project 2', Mockup1Pc, Mockup1Phone, 'An e-commerce site built with Next.js and styled-components.', 'Next.js, styled-components', 'https://example.com/project2', 'https://deploy.com/project2'),
 
@@ -72,7 +79,7 @@ const ProjectGrid = () => {
                         <img
                             src={project.mobileMockup}
                             alt={`${project.title} Mobile Mockup`}
-                            className='absolute top-10 left-10 w-24 h-48 object-cover rounded-lg shadow-lg'
+                            className='absolute top-10 left-5 w-24 h-48 -rotate-12 object-cover rounded-lg shadow-lg'
                         />
 
                         {hoveredProject === project.id && (
