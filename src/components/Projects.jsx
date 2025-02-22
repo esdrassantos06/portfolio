@@ -27,23 +27,23 @@ const ProjectGrid = () => {
     }
 
     const projects = [
-        new Project( 'Construtora Nova Horizonte', NH_Pc, NH_Phone, 'A fictional project focused on civil construction and engineering services.', 'React, Tailwind CSS, Shadcn UI', 'https://github.com/esdrassantos06/novahorizonte', 'https://novahorizonte.vercel.app/'),
+        new Project('Construtora Nova Horizonte', NH_Pc, NH_Phone, 'A fictional project focused on civil construction and engineering services.', 'React, Tailwind CSS, Shadcn UI', 'https://github.com/esdrassantos06/novahorizonte', 'https://novahorizonte.vercel.app/'),
 
-        new Project( 'Project 2', Mockup1Pc, Mockup1Phone, 'An e-commerce site built with Next.js and styled-components.', 'Next.js, styled-components', 'https://example.com/project2', 'https://deploy.com/project2'),
+        new Project('Project 2', Mockup1Pc, Mockup1Phone, 'An e-commerce site built with Next.js and styled-components.', 'Next.js, styled-components', 'https://example.com/project2', 'https://deploy.com/project2'),
 
-        new Project( 'Project 3', Mockup1Pc, Mockup1Phone, 'A custom blog template created with Gatsby and GraphQL.', 'Gatsby, GraphQL', 'https://example.com/project3', 'https://deploy.com/project3'),
+        new Project('Project 3', Mockup1Pc, Mockup1Phone, 'A custom blog template created with Gatsby and GraphQL.', 'Gatsby, GraphQL', 'https://example.com/project3', 'https://deploy.com/project3'),
 
-        new Project( 'Project 4', Mockup1Pc, Mockup1Phone, 'A custom dashboard built with Vue and Tailwind CSS.', 'Vue, Tailwind CSS', 'https://example.com/project4', 'https://deploy.com/project4'),
+        new Project('Project 4', Mockup1Pc, Mockup1Phone, 'A custom dashboard built with Vue and Tailwind CSS.', 'Vue, Tailwind CSS', 'https://example.com/project4', 'https://deploy.com/project4'),
 
-        new Project( 'Project 5', Mockup1Pc, Mockup1Phone, 'A personal finance tracker made with Angular and Firebase.', 'Angular, Firebase', 'https://example.com/project5', 'https://deploy.com/project5'),
+        new Project('Project 5', Mockup1Pc, Mockup1Phone, 'A personal finance tracker made with Angular and Firebase.', 'Angular, Firebase', 'https://example.com/project5', 'https://deploy.com/project5'),
 
-        new Project( 'Project 6', Mockup1Pc, Mockup1Phone, 'A real-time chat app built with React and Socket.io.', 'React, Socket.io', 'https://example.com/project6', 'https://deploy.com/project6'),
+        new Project('Project 6', Mockup1Pc, Mockup1Phone, 'A real-time chat app built with React and Socket.io.', 'React, Socket.io', 'https://example.com/project6', 'https://deploy.com/project6'),
 
-        new Project( 'Project 7', Mockup1Pc, Mockup1Phone, 'A task management tool created using Svelte and Tailwind CSS.', 'Svelte, Tailwind CSS', 'https://example.com/project7', 'https://deploy.com/project7'),
+        new Project('Project 7', Mockup1Pc, Mockup1Phone, 'A task management tool created using Svelte and Tailwind CSS.', 'Svelte, Tailwind CSS', 'https://example.com/project7', 'https://deploy.com/project7'),
 
-        new Project( 'Project 8', Mockup1Pc, Mockup1Phone, 'An AI-powered chatbot built with Next.js and OpenAI API.', 'Next.js, OpenAI API', 'https://example.com/project8', 'https://deploy.com/project8'),
+        new Project('Project 8', Mockup1Pc, Mockup1Phone, 'An AI-powered chatbot built with Next.js and OpenAI API.', 'Next.js, OpenAI API', 'https://example.com/project8', 'https://deploy.com/project8'),
 
-        new Project( 'Project 9', Mockup1Pc, Mockup1Phone, 'A multi-language blog developed with Astro and Markdown.', 'Astro, Markdown', 'https://example.com/project9', 'https://deploy.com/project9'),
+        new Project('Project 9', Mockup1Pc, Mockup1Phone, 'A multi-language blog developed with Astro and Markdown.', 'Astro, Markdown', 'https://example.com/project9', 'https://deploy.com/project9'),
     ];
 
 
