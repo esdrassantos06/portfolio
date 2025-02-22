@@ -69,7 +69,7 @@ const Contact = () => {
 
 
         <form
-          className="p-8 w-[80%] rounded-xl shadow-lg border-solid border dark:border-[#F2F2F2]/20 border-[#1F1F1F]/20"
+          className="p-8 sm:w-[80%] w-full rounded-xl shadow-lg border-solid border dark:border-[#F2F2F2]/20 border-[#1F1F1F]/20"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="mb-6 w-full">
@@ -135,7 +135,7 @@ const Contact = () => {
                 </>
               )}
             </button>
-            <ReCAPTCHA
+            <ReCAPTCHA className='w-full flex items-center justify-center'
               ref={recaptchaRef}
               onChange={() => setIsRecaptchaComplete(true)}
               onExpired={() => setIsRecaptchaComplete(false)}
@@ -145,9 +145,6 @@ const Contact = () => {
             {!isRecaptchaComplete && submitAttempted && (
               <p className='text-red-500 mt-2 text-sm'>Please complete the reCAPTCHA...</p>
             )}
-
-
-
           </div>
           {errors.root && <p className='text-red-500 text-sm mt-2'>{errors.root.message}</p>}
         </form>
