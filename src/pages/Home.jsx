@@ -179,12 +179,12 @@ const Home = () => {
                                         <SquareChevronRight size={40} />
                                     </div>
                                     <div className='flex flex-col poppins-font items-center justify-center'>
-                                        <h2 className='text-xl max-md:text-lg  mb-8 font-bold text-center dark:text-white select-none'>FrontEnd Developer</h2>
+                                        <h2 className='text-xl max-md:text-lg  mb-8 font-bold text-center dark:text-white select-none'>FullStack Developer</h2>
                                         <p className='text-lg mb-8 w-[300px] px-2 dark:text-white text-center max-md:text-base max-lg:w-fit'>I enjoy coding things from scratch and bringing ideas to life in the browser.</p>
                                     </div>
                                     <div className='poppins-font mb-28 max-sm:mb-10 flex flex-col items-center justify-center'>
                                         <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white text-center'>Tools I know:</h1>
-                                        <p className='text-base font-medium dark:text-white text-center' translate='no'>React, Next.js, TailwindCSS, Bootstrap, Shadcn/ui</p>
+                                        <p className='text-base font-medium dark:text-white text-center' translate='no'>React, Next.js, TailwindCSS, NodeJS, Python, Shadcn/ui</p>
                                     </div>
                                     <div className='poppins-font max-sm:mb-4 flex flex-col items-center justify-center'>
                                         <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Dev Tools:</h1>
