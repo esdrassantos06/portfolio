@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar'
 import WritingEffect from '../components/WritingEffect';
-import myselfImage from '../assets/images/myself.png'
+import myselfImage from '../assets/images/myself.webp'
 import { SquareChevronRight, Layers3, BookOpen } from 'lucide-react';
 import ProjectGrid from '../components/Projects'
 import Footer from '../components/Footer'
 import { Link } from 'react-router';
 import CV from '../assets/cv/esdrasCV.pdf';
 
-//Dont upgrade to react 19 until react spring is updated
+// Don't upgrade to react 19 until react spring is updated
 
 const Home = () => {
     const [showButton, setShowButton] = useState(false); // Back to top button

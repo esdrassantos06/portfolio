@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Mockup1Pc from '../assets/mockups/mockup1-mac.png';
-import Mockup1Phone from '../assets/mockups/mockup1-phone.png';
-import NH_Phone from '../assets/mockups/novahorizonte-phone.png'
-import NH_Pc from '../assets/mockups/novahorizonte-mac.png'
+import Mockup1Pc from '../assets/mockups/mockup1-mac.webp';
+import Mockup1Phone from '../assets/mockups/mockup1-phone.webp';
+import NH_Phone from '../assets/mockups/novahorizonte-phone.webp'
+import NH_Pc from '../assets/mockups/novahorizonte-mac.webp'
 
 // Use o site https://mockuphone.com/ para fazer os mockups
 // Mockup Mobile é iphone 14
@@ -71,12 +71,12 @@ const ProjectGrid = () => {
                         onClick={() => handleProjectClick(project)}
                     >
                         <h3 className='text-black dark:text-white text-center font-semibold mb-5'>{project.title}</h3>
-                        <img
+                        <img loading='lazy'
                             src={project.pcMockup}
                             alt={`${project.title} PC Mockup`}
                             className='w-full h-48 object-cover rounded-lg'
                         />
-                        <img
+                        <img loading='lazy'
                             src={project.mobileMockup}
                             alt={`${project.title} Mobile Mockup`}
                             className='absolute bottom-5 left-5 w-24 h-48 -rotate-12 object-cover rounded-lg shadow-lg'
