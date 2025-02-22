@@ -6,6 +6,9 @@ import { useLocation, Link } from 'react-router';
 
 const Navbar = () => {
 
+    const routes = ['home', 'about', 'skills', 'projects'];
+
+
     const location = useLocation();
 
     const hiddenRoute = ['/contact'];
@@ -68,7 +71,7 @@ const Navbar = () => {
 
                         {!hiddenRoute.includes(location.pathname) && (
                             <ul className='hidden pr-3 lg:flex flex-row justify-center items-center gap-6'>
-                                {['home', 'about', 'skills', 'projects'].map(section => (
+                                {routes.map(section => (
                                     <li key={section}>
                                         <a
                                             translate="no"
@@ -76,7 +79,7 @@ const Navbar = () => {
                                             href={`#${section}`}
                                         >
                                             {section.charAt(0).toUpperCase() + section.slice(1)}
-                                            <span className="absolute left-0 bottom-0 h-[2px] w-full bg-gray-700 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 origin-left" />
+                                            <span className="absolute left-0 bottom-0 h-0.5 w-full bg-gray-700 transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100 origin-left" />
                                         </a>
                                     </li>
                                 ))}
@@ -126,11 +129,13 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
+                        {!hiddenRoute.includes(location.pathname) && (
                         <div className='lg:hidden flex'>
                             <button onClick={toggleNavbar}>
                                 {isOpen ? <X size={30} className='dark:stroke-white' /> : <Menu size={30} className='dark:stroke-white' />}
                             </button>
                         </div>
+                    )}
                     </div>
                 </nav>
 

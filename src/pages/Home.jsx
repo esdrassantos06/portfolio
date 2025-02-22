@@ -79,7 +79,7 @@ const Home = () => {
                     </aside>
 
                     <div className='__some-buttons z-10'>
-                        <a href='#about'
+                        <a href='#about' aria-label='Scroll to about section'
                             className="btn-scroll lg:flex items-center justify-center bg-transparent border-none left-1/2 bottom-12 absolute w-8 h-12 max-md:hidden"
                             id="scrollButton">
                             <span className="scroll w-1 h-3 rounded-xl"></span>
@@ -87,7 +87,7 @@ const Home = () => {
 
                         <div className="social-buttons bg-[#f2f2f2] shadow-lg px-2.5 py-4 rounded-full dark:bg-[#1F1F1F] flex justify-center items-center absolute bottom-5 left-5" id="CorSocial">
 
-                            <a href="https://github.com/esdrassantos06"
+                            <a href="https://github.com/esdrassantos06" aria-label='Github'
                                 className="rounded-[50%] mx-2.5 my-0 transition dark:invert dark:shadow-zinc-900/50 duration-300 group hover:bg-[#333] flex justify-center items-center w-12 h-12 shadow-gray-700  shadow-md github bg-zinc-900"
                                 target="_blank" id="github">
 
@@ -98,7 +98,7 @@ const Home = () => {
                                 </svg>
                             </a>
 
-                            <a href="https://www.linkedin.com/in/esdrassantos06/"
+                            <a href="https://www.linkedin.com/in/esdrassantos06/" aria-label='Linkedin'
                                 className="rounded-[50%] hover:bg-[#0077b5]/80 mx-2.5 my-0 bg-[#0077b5] transition dark:shadow-[#0077b5]/50 duration-300 flex justify-center w-12 h-12 items-center shadow-gray-700 shadow-md linkedin"
                                 target="_blank">
 
@@ -212,7 +212,7 @@ const Home = () => {
                                     </div>
                                     <div className='poppins-font flex flex-col items-center justify-center'>
                                         <h1 className='text-purple-800 mb-1 font-semibold text-lg dark:text-white'>Institution:</h1>
-                                        <a href='https://tokioschool.pt' target='_blank' className='text-base underline font-medium dark:text-white' translate='no'>Tokio School</a>
+                                        <a href='https://tokioschool.pt' aria-label='Tokio School Website' target='_blank' className='text-base underline font-medium dark:text-white' translate='no'>Tokio School</a>
                                     </div>
                                 </div>
 
