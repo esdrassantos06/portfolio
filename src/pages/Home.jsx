@@ -56,7 +56,7 @@ const Home = () => {
             <main className='md:pt-20 pt-30'>
 
                 <section
-                    className={`__main-container min-h-screen h-fit relative grid gap-20 items-center place-content-center md:grid-cols-2 bg-mist-gray dark:bg-custom-black flex-row w-full `}
+                    className={`__main-container min-h-screen h-fit  relative grid gap-20 items-center place-content-center md:grid-cols-2 bg-mist-gray dark:bg-custom-black flex-row w-full `}
                     id="home"
                 >
                     <article className="flex flex-col pl-4 md:pl-12 items-start w-full poppins-font">
@@ -64,7 +64,7 @@ const Home = () => {
                             className="text-mypurple" translate="no">Esdras</span></h1>
                         <WritingEffect />
 
-                        <p className="max-w-96 py-4 dark:text-white poppins-font text-base md:text-lg">I&apos;m Esdras, a FrontEnd Developer. I&apos;m 18 years old and
+                        <p className="max-w-96 py-4 dark:text-white poppins-font text-base md:text-lg">I&apos;m Esdras, a FullStack Developer. I&apos;m 18 years old and
                             have 1 year of experience. I&apos;m currently living in Portugal.</p>
                         <div className='__contact-buttons gap-4 flex w-full max-sm:flex-wrap'>
                             <Link to="/contact" className="text-md text-center h-12 flex items-center justify-center hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple active:text-mypurple active:bg-transparent border-mypurple transition-colors duration-300 sm:w-44 w-30  text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium" translate='no'>Contact-me!</Link>
@@ -88,7 +88,7 @@ const Home = () => {
                         <div className="social-buttons bg-[#f2f2f2] shadow-lg px-2.5 py-4 rounded-full dark:bg-[#1F1F1F] flex justify-center items-center absolute bottom-5 left-5" id="CorSocial">
 
                             <a href="https://github.com/esdrassantos06"
-                                className="rounded-[50%] mx-2.5 my-0 transition dark:invert dark:shadow-zinc-900/50 duration-300 group hover:bg-[#333] flex justify-center items-center w-12 h-12 shadow-gray-700  shadow-md github bg-zinc-900" 
+                                className="rounded-[50%] mx-2.5 my-0 transition dark:invert dark:shadow-zinc-900/50 duration-300 group hover:bg-[#333] flex justify-center items-center w-12 h-12 shadow-gray-700  shadow-md github bg-zinc-900"
                                 target="_blank" id="github">
 
                                 <svg className="w-6 fill-[#f2f2f2] h-6" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19">
@@ -130,11 +130,16 @@ const Home = () => {
                     </button>
                 )} {/* Back to top button */}
 
-                <section id="about" className={`__about-container flex h-screen bg-about-purple flex-col w-full items-center `}>
-                    <div className='pt-20 flex flex-col justify-center items-center poppins-font'>
-                        <h1 className='about-main-title text-center poppins-font font-bold md:text-7xl text-5xl select-none text-white'>About <span
+                <section id="about" className={`__about-container flex sm:h-screen h-fit bg-about-purple flex-col w-full items-center `}>
+                    <div className='sm:mt-40 mt-20 flex flex-col justify-center items-center poppins-font'>
+                        <h1 className='about-main-title mb-10 text-center poppins-font font-bold md:text-7xl text-5xl select-none text-white'>About <span
                             className="text-mypurple bg-mist-gray dark:bg-custom-black">Me</span></h1>
-                        <p className="text-white lg:w-2/4 mt-4 p-3 text-center">My name is Esdras, an 18-year-old Brazilian frontend developer living in Portugal. I&apos;m passionate about creating user-friendly and visually appealing web interfaces, with a solid background in JavaScript, HTML, and CSS. My expertise in React, NextJS and Tailwind CSS helps me build dynamic, component-based interfaces that are efficient and maintainable. Living in Portugal has broadened my perspective on international development trends, and I strive to deliver clean, optimized code for enjoyable interactions across different devices and platforms.</p>
+
+                        <p className="text-white lg:w-2/4 mt-4 p-3 text-center">
+                            Hi, I’m Esdras, a FullStack Developer with expertise in <strong>Python, NodeJS, NextJS, MySQL, and TailwindCSS.</strong> At 18 years old, I’ve built a solid foundation in software development, with a focus on writing clean, efficient, and maintainable code. I am passionate about creating seamless user experiences and have hands-on experience working with technologies like React, NextJS, and TailwindCSS to develop dynamic, responsive web applications. I take pride in adhering to SOLID principles and delivering high-quality code that scales across platforms. Currently, I’m based in Portugal, and my international experience has allowed me to stay up-to-date with the latest development trends and methodologies. I’m excited about solving complex challenges and continuously learning to improve my craft.
+                        </p>
+
+
                     </div>
                 </section> {/* About Section */}
 
@@ -142,9 +147,9 @@ const Home = () => {
 
                 <section
                     id="skills"
-                    className='__skills pb-4 px-10 -mt-60 sm:-mt-70 flex justify-center items-center w-full'>
-                    <div className='shadow-md w-full shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg h-full'>
-                        <div className='__box mt-20 mb-24 w-full h-full'>
+                    className='__skills pb-4 px-10 sm:-mt-50 lg:-mt-70 flex justify-center items-center w-full'>
+                    <div className='shadow-md w-[80%] flex items-center justify-center shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg'>
+                        <div className='__box mt-20 mb-24 w-full '>
                             <div className='__content max-sm:block flex justify-around items-stretch flex-row w-full h-full text-black'>
 
                                 <div className='__column pb-4 flex flex-col justify-center items-center gap-3 h-full sm:w-1/3'>
