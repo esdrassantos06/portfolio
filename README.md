@@ -59,4 +59,4 @@ Feel free to send suggestions and feedback. You can open an **issue** or contact
 
 ## 👨‍💻 Developed by Esdras
 
-This portfolio was created to showcase my skills and projects in technology. I’m always learning and growing as a front-end developer.
+This portfolio was created to showcase my skills and projects in technology. I’m always learning and growing as a FullStack developer.
