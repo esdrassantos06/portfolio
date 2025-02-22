@@ -53,7 +53,7 @@ const Home = () => {
 
             <Navbar />
 
-            <main className='pt-30'>
+            <main className='md:pt-20 pt-30'>
 
                 <section
                     className={`__main-container min-h-screen h-fit relative grid gap-20 items-center place-content-center md:grid-cols-2 bg-mist-gray dark:bg-custom-black flex-row w-full `}
@@ -85,21 +85,24 @@ const Home = () => {
                             <span className="scroll w-1 h-3 rounded-xl"></span>
                         </a>
 
-                        <div className="social-buttons dark:bg-[#1F1F1F] flex justify-center items-center absolute bottom-5 left-5" id="CorSocial">
+                        <div className="social-buttons bg-[#f2f2f2] shadow-lg px-2.5 py-4 rounded-full dark:bg-[#1F1F1F] flex justify-center items-center absolute bottom-5 left-5" id="CorSocial">
+
                             <a href="https://github.com/esdrassantos06"
-                                className="rounded-[50%] mx-2.5 my-0 bg-white transition dark:invert dark:shadow-none duration-300 hover:bg-[#f2f2f2] flex justify-center items-center w-12 h-12 shadow-gray-700 shadow-md github"
+                                className="rounded-[50%] mx-2.5 my-0 transition dark:invert dark:shadow-zinc-900/50 duration-300 group hover:bg-[#333] flex justify-center items-center w-12 h-12 shadow-gray-700  shadow-md github bg-zinc-900" 
                                 target="_blank" id="github">
-                                <svg className="cf-icon-svg w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19">
+
+                                <svg className="w-6 fill-[#f2f2f2] h-6" xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 0 19 19">
                                     <path
                                         d="M9.464 17.178a4.506 4.506 0 0 1-2.013.317 4.29 4.29 0 0 1-2.007-.317.746.746 0 0 1-.277-.587c0-.22-.008-.798-.012-1.567-2.564.557-3.105-1.236-3.105-1.236a2.44 2.44 0 0 0-1.024-1.348c-.836-.572.063-.56.063-.56a1.937 1.937 0 0 1 1.412.95 1.962 1.962 0 0 0 2.682.765 1.971 1.971 0 0 1 .586-1.233c-2.046-.232-4.198-1.023-4.198-4.554a3.566 3.566 0 0 1 .948-2.474 3.313 3.313 0 0 1 .091-2.438s.773-.248 2.534.945a8.727 8.727 0 0 1 4.615 0c1.76-1.193 2.532-.945 2.532-.945a3.31 3.31 0 0 1 .092 2.438 3.562 3.562 0 0 1 .947 2.474c0 3.54-2.155 4.32-4.208 4.548a2.195 2.195 0 0 1 .625 1.706c0 1.232-.011 2.227-.011 2.529a.694.694 0 0 1-.272.587z">
                                     </path>
                                 </svg>
                             </a>
 
-                            <a href="https://www.linkedin.com/in/esdras-santos-990a15301/"
-                                className="rounded-[50%] hover:bg-[#f2f2f2] mx-2.5 my-0 bg-white transition dark:shadow-none duration-300  flex justify-center w-12 h-12 items-center shadow-gray-700 shadow-md linkedin"
+                            <a href="https://www.linkedin.com/in/esdrassantos06/"
+                                className="rounded-[50%] hover:bg-[#0077b5]/80 mx-2.5 my-0 bg-[#0077b5] transition dark:shadow-[#0077b5]/50 duration-300 flex justify-center w-12 h-12 items-center shadow-gray-700 shadow-md linkedin"
                                 target="_blank">
-                                <svg viewBox="0 -2 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
+
+                                <svg viewBox="0 -2 44 44" className='w-6 h-6 fill-[#f2f2f2]' version="1.1" xmlns="http://www.w3.org/2000/svg"
                                     xmlnsXlink="http://www.w3.org/1999/xlink">
                                     <g id="Icons" stroke="none" strokeWidth="1">
                                         <g transform="translate(-702.000000, -265.000000)">
@@ -127,8 +130,8 @@ const Home = () => {
                     </button>
                 )} {/* Back to top button */}
 
-                <section id="about" className={`__about-container flex h-[60vh] bg-about-purple flex-col w-full items-center `}>
-                    <div className='mt-32 flex flex-col justify-center items-center poppins-font'>
+                <section id="about" className={`__about-container flex h-screen bg-about-purple flex-col w-full items-center `}>
+                    <div className='pt-20 flex flex-col justify-center items-center poppins-font'>
                         <h1 className='about-main-title text-center poppins-font font-bold md:text-7xl text-5xl select-none text-white'>About <span
                             className="text-mypurple bg-mist-gray dark:bg-custom-black">Me</span></h1>
                         <p className="text-white lg:w-2/4 mt-4 p-3 text-center">My name is Esdras, an 18-year-old Brazilian frontend developer living in Portugal. I&apos;m passionate about creating user-friendly and visually appealing web interfaces, with a solid background in JavaScript, HTML, and CSS. My expertise in React, NextJS and Tailwind CSS helps me build dynamic, component-based interfaces that are efficient and maintainable. Living in Portugal has broadened my perspective on international development trends, and I strive to deliver clean, optimized code for enjoyable interactions across different devices and platforms.</p>
@@ -139,12 +142,12 @@ const Home = () => {
 
                 <section
                     id="skills"
-                    className='__skills pb-4 px-4 flex justify-center items-center max-sm:w-[90%] mx-auto w-full'>
-                    <div className='container shadow-md shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg h-full'>
+                    className='__skills pb-4 px-10 -mt-60 sm:-mt-70 flex justify-center items-center w-full'>
+                    <div className='shadow-md w-full shadow-slate-300 dark:shadow-zinc-950 dark:bg-neutral-900 bg-mist-gray rounded-lg h-full'>
                         <div className='__box mt-20 mb-24 w-full h-full'>
                             <div className='__content max-sm:block flex justify-around items-stretch flex-row w-full h-full text-black'>
 
-                                <div className='__column flex flex-col justify-center items-center gap-3 h-full sm:w-1/3'>
+                                <div className='__column pb-4 flex flex-col justify-center items-center gap-3 h-full sm:w-1/3'>
                                     <div className='bg-green-500 mb-4 rounded-full p-4'>
                                         <Layers3 size={40} />
                                     </div>
@@ -166,7 +169,7 @@ const Home = () => {
                                     </div>
                                 </div>
 
-                                <div className='__column flex max-sm:pt-8 flex-col border-solid justify-center h-full items-center gap-3 sm:w-1/3 sm:border-l sm:border-r max-sm:border-b max-sm:border-t max-sm:mt-6 max-sm:mb-6 border-gray-300 dark:border-gray-700'>
+                                <div className='__column pb-4 flex max-sm:pt-8 flex-col border-solid justify-center h-full items-center gap-3 sm:w-1/3 sm:border-l sm:border-r max-sm:border-b max-sm:border-t max-sm:mt-6 max-sm:mb-6 border-gray-300 dark:border-gray-700'>
                                     <div className='bg-green-500 mb-4 max-sm:mt-4 rounded-full p-4'>
                                         <SquareChevronRight size={40} />
                                     </div>

@@ -114,46 +114,6 @@ button {
   }
 }
 
-/* Social Buttons */
-
-.social-buttons {
-  background-color: #f2f2f2;
-  box-shadow: 0px 0px 15px #00000027;
-  padding: 15px 10px;
-  border-radius: 5em;
-}
-
-.social-buttons svg {
-  transition: 0.3s;
-  height: 20px;
-}
-
-.github {
-  background-color: #333;
-}
-
-.github svg {
-  fill: #f2f2f2;
-}
-
-.github:hover svg {
-  fill: #333;
-}
-
-.linkedin {
-  background-color: #0077b5;
-}
-
-.linkedin svg {
-  fill: #f2f2f2;
-}
-
-.linkedin:hover svg {
-  fill: #0077b5;
-}
-
-/* End Social Buttons */
-
 
 *::-webkit-scrollbar {
   height: 15px;
