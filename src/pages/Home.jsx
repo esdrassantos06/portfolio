@@ -69,7 +69,7 @@ const Home = () => {
                         <div className='__contact-buttons gap-4 flex w-full max-sm:flex-wrap'>
                             <Link to="/contact" className="text-md text-center h-12 flex items-center justify-center hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple active:text-mypurple active:bg-transparent border-mypurple transition-colors duration-300 sm:w-44 w-30  text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium" translate='no'>Contact-me!</Link>
 
-                            <a href={CV} download='Esdras Resume' className="text-md text-center h-12 flex items-center justify-center hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple active:text-mypurple active:bg-transparent border-mypurple transition-colors duration-300 sm:w-44 w-30 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium" translate='no'>CV</a>
+                            <a href={CV} className="text-md text-center h-12 flex items-center justify-center hover:bg-transparent border border-solid whitespace-nowrap hover:text-mypurple active:text-mypurple active:bg-transparent border-mypurple transition-colors duration-300 sm:w-44 w-30 text-zinc-50 bg-mypurple rounded-lg poppins-font font-medium" translate='no'>CV</a>
                         </div>
                     </article>
 
