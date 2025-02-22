@@ -1,14 +1,20 @@
-/* eslint-disable */
 import { useNavigate } from 'react-router';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser'
 import { Loader } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import ReCAPTCHA from 'react-google-recaptcha';
+
 const Contact = () => {
 
+  const recaptchaRef = useRef(null);
+  const [isRecaptchaComplete, setIsRecaptchaComplete] = useState(false);
   const navigate = useNavigate();
+  const [submitAttempted, setSubmitAttempted] = useState(false);
+
 
   const schema =
     z.object({
@@ -25,6 +31,11 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
 
+    if (!isRecaptchaComplete) {
+      setSubmitAttempted(true);
+      return;
+    }
+
     const template = {
       from_name: data.name,
       email: data.email,
@@ -34,7 +45,7 @@ const Contact = () => {
     try {
       const result = await emailjs.send(
         'service_dy6lr87',
-        'template_h0bffhe', 
+        'template_h0bffhe',
         template,
         'ti16g7ix8mDElaSte'
       );
@@ -46,6 +57,8 @@ const Contact = () => {
       setError('root', { message: `Something Went Wrong. Error Code: ${error.status}` })
     }
 
+    setIsRecaptchaComplete(false);
+    recaptchaRef.current.reset();
   }
 
 
@@ -107,18 +120,35 @@ const Contact = () => {
 
           </div>
 
-          <button
-            type="submit" disabled={isSubmitting}
-            className="w-full flex items-center gap-2 justify-center bg-mypurple text-white py-3 rounded-lg hover:bg-purple-800 transition duration-300"
-          >
-            {isSubmitting ? (
-              <>
-                Please Wait... <Loader className="animate-spin" />
-              </>
-            ) : (
-              'Send Message'
+          <div className='flex flex-col items-center justify-center gap-4'>
+            <button
+              type="submit" disabled={isSubmitting}
+              className={`w-full ${isSubmitting ? 'select-none bg-zinc-700 pointer-events-none' : ''} flex items-center gap-2 justify-center bg-mypurple text-white h-12 rounded-lg hover:bg-purple-800 transition duration-300`}
+            >
+              {isSubmitting ? (
+                <>
+                  Please Wait... <Loader className="animate-spin" />
+                </>
+              ) : (
+                <>
+                  Send Message
+                </>
+              )}
+            </button>
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              onChange={() => setIsRecaptchaComplete(true)}
+              onExpired={() => setIsRecaptchaComplete(false)}
+              sitekey="6LfZLd4qAAAAALnIEdvzkj7OGPVxF462-t0kB4lA" // Substitua pela sua Site Key do reCAPTCHA
+            />
+
+            {!isRecaptchaComplete && submitAttempted && (
+              <p className='text-red-500 mt-2 text-sm'>Please complete the reCAPTCHA...</p>
             )}
-          </button>
+
+
+
+          </div>
           {errors.root && <p className='text-red-500 text-sm mt-2'>{errors.root.message}</p>}
         </form>
       </div>

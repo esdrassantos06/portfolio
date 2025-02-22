@@ -6,7 +6,7 @@ const Thanks = () => {
     return (
         <>
             <div className="w-full gap-4 flex flex-col items-center justify-center p-4">
-                <div className="bg-mypurple text-center gap-10 p-5 flex flex-col items-center justify-center w-full text-white poppins-font">
+                <div className="bg-mypurple text-center gap-5 p-5 flex flex-col items-center justify-center w-full text-white poppins-font">
                     <h1 className="text-6xl font-bold">THANK YOU!</h1>
                     <p className="text-lg">We have received your email and will get back to you soon.</p>
                 </div>
