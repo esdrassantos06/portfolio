@@ -72,7 +72,7 @@ const ProjectGrid = () => {
                         onMouseLeave={() => setHoveredProject(null)}
                         onClick={() => handleProjectClick(project)}
                     >
-                        <h3 className='text-black dark:text-white text-center font-semibold mb-5'>{project.title}</h3>
+                        <h1 className='text-black dark:text-white text-center font-semibold mb-5'>{project.title}</h1>
                         <img loading='lazy'
                             src={project.pcMockup}
                             alt={`${project.title} PC Mockup`}
@@ -107,7 +107,7 @@ const ProjectGrid = () => {
                 <div className='fixed inset-0 z-999 flex items-center justify-center bg-black/50' onClick={closeModal}>
 
                     <div className='bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-lg w-11/12 max-w-lg' onClick={(e) => e.stopPropagation()}>
-                        <h2 className='text-xl font-semibold dark:text-white mb-4'>{selectedProject.title}</h2>
+                        <h1 className='text-xl font-semibold dark:text-white mb-4'>{selectedProject.title}</h1>
                         <p className='dark:text-white'>{selectedProject.description}</p>
                         <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>{selectedProject.frameworks}</p>
                         <div className='flex w-full items-center mt-2 justify-around'>
