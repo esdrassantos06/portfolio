@@ -8,6 +8,8 @@ import NH_Pc from '../assets/mockups/novahorizonte-mac.webp'
 // Mockup Mobile é iphone 14
 // Mockup PC é Macbook Air 13, mas tenho que fazer um ajuste no tamanho da imagem
 // a cor dos mockups é Midnight
+// Transforme os mockups em webp e use o tinyPNG para comprimir as imagens
+
 
 const ProjectGrid = () => {
     const [showMore, setShowMore] = useState(false);
