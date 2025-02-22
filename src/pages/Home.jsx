@@ -26,7 +26,7 @@ const Home = () => {
 
 
 
-        let devTools = ['VS Code, Github, Anaconda Prompt'];
+        let devTools = ['VS Code, Github, Anaconda'];
 
         const toolsArray = devTools[0].split(', ');
 
