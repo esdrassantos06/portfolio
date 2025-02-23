@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import ReCAPTCHA from 'react-google-recaptcha';
+import Footer from '../components/Footer';
 
 const Contact = () => {
 
@@ -135,7 +136,7 @@ const Contact = () => {
                 </>
               )}
             </button>
-            <ReCAPTCHA className='w-full flex items-center justify-center'
+            <ReCAPTCHA className='w-full overflow-hidden flex items-center justify-center'
               ref={recaptchaRef}
               onChange={() => setIsRecaptchaComplete(true)}
               onExpired={() => setIsRecaptchaComplete(false)}
@@ -149,6 +150,9 @@ const Contact = () => {
           {errors.root && <p className='text-red-500 text-sm mt-2'>{errors.root.message}</p>}
         </form>
       </div>
+      <div className='absolute bottom-0 w-full '>
+      <Footer />
+      </div> 
     </>
   );
 };

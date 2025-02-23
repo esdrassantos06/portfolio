@@ -15,7 +15,7 @@ export const Reveal = ({ children }) => {
     }, [controls, isInView]);
 
     return (
-        <div ref={ref} className="relative  h-full w-full">
+        <div ref={ref} className="relative h-full w-full">
             <motion.div
             variants={{
                 hidden: {opacity: 0, y: 75},
