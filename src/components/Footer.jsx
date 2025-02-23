@@ -3,7 +3,7 @@ import { Reveal } from './Reveal';
 const Footer = () => {
     return (
         <footer className='relative overflow-hidden w-full select-none bottom-0'>
-            <div className='flex w-full flex-col gap-3 justify-center items-center py-10 text-black poppins-font dark:text-white'>
+            <div className='flex w-full flex-col gap-3 justify-center items-center pt-10 pb-5 text-black poppins-font dark:text-white'>
                 <div>
                     <Reveal>
                         Developed By Esdras © {new Date().getFullYear()} All rights reserved.
