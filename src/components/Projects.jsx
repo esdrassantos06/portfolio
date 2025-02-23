@@ -3,6 +3,7 @@ import Mockup1Pc from '../assets/mockups/mockup1-mac.webp';
 import Mockup1Phone from '../assets/mockups/mockup1-phone.webp';
 import NH_Phone from '../assets/mockups/novahorizonte-phone.webp'
 import NH_Pc from '../assets/mockups/novahorizonte-mac.webp'
+import { Reveal } from './Reveal';
 
 // Use o site https://mockuphone.com/ para fazer os mockups
 // Mockup Mobile é iphone 14
@@ -65,32 +66,33 @@ const ProjectGrid = () => {
         <div className='flex flex-col items-center mx-4 mb-20'>
             <div className='grid md:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-4'>
                 {visibleProjects.map((project) => (
-                    <div
-                        key={project.id}
-                        className='relative bg-gray-200 shadow-md shadow-slate-300 active:scale-100 active:translate-y-1 hover:scale-105 dark:shadow-zinc-950 dark:bg-neutral-900 p-4 rounded-lg overflow-hidden cursor-pointer'
-                        onMouseEnter={() => setHoveredProject(project.id)}
-                        onMouseLeave={() => setHoveredProject(null)}
-                        onClick={() => handleProjectClick(project)}
-                    >
-                        <h1 className='text-black dark:text-white text-center font-semibold mb-5'>{project.title}</h1>
-                        <img loading='lazy'
-                            src={project.pcMockup}
-                            alt={`${project.title} PC Mockup`}
-                            className='w-full h-48 object-cover rounded-lg'
-                        />
-                        <img loading='lazy'
-                            src={project.mobileMockup}
-                            alt={`${project.title} Mobile Mockup`}
-                            className='absolute bottom-5 left-5 w-24 h-48 -rotate-12 object-cover rounded-lg shadow-lg'
-                        />
+                    <Reveal key={project.id}>
+                        <div
+                            className='relative bg-gray-200 shadow-md shadow-slate-300 active:scale-100 active:translate-y-1 hover:scale-105 dark:shadow-zinc-950 dark:bg-neutral-900 p-4 rounded-lg overflow-hidden cursor-pointer'
+                            onMouseEnter={() => setHoveredProject(project.id)}
+                            onMouseLeave={() => setHoveredProject(null)}
+                            onClick={() => handleProjectClick(project)}
+                        >
+                            <h1 className='text-black dark:text-white text-center font-semibold mb-5'>{project.title}</h1>
+                            <img loading='lazy'
+                                src={project.pcMockup}
+                                alt={`${project.title} PC Mockup`}
+                                className='w-full h-48 object-cover rounded-lg'
+                            />
+                            <img loading='lazy'
+                                src={project.mobileMockup}
+                                alt={`${project.title} Mobile Mockup`}
+                                className='absolute bottom-5 left-5 w-24 h-48 -rotate-12 object-cover rounded-lg shadow-lg'
+                            />
 
-                        {hoveredProject === project.id && (
-                            <div className='absolute inset-0 bg-black/75 flex flex-col items-center justify-center p-4 text-white rounded-lg'>
-                                <p className='text-lg font-semibold mb-2'>{project.description}</p>
-                                <p className='text-sm'>{project.frameworks}</p>
-                            </div>
-                        )}
-                    </div>
+                            {hoveredProject === project.id && (
+                                <div className='absolute inset-0 bg-black/75 flex flex-col items-center justify-center p-4 text-white rounded-lg'>
+                                    <p className='text-lg font-semibold mb-2'>{project.description}</p>
+                                    <p className='text-sm'>{project.frameworks}</p>
+                                </div>
+                            )}
+                        </div>
+                    </Reveal>
                 ))}
             </div>
 
@@ -106,7 +108,7 @@ const ProjectGrid = () => {
             {selectedProject && (
                 <div className='fixed inset-0 z-999 flex items-center justify-center bg-black/50' onClick={closeModal}>
 
-                    <div className='bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-lg w-11/12 max-w-lg' onClick={(e) => e.stopPropagation()}>
+                    <div className={`bg-white ${selectedProject ? 'animate-scale-in-ver-top' : '' } dark:bg-neutral-800 p-6 rounded-lg shadow-lg w-11/12 max-w-lg`} onClick={(e) => e.stopPropagation()}>
                         <h1 className='text-xl font-semibold dark:text-white mb-4'>{selectedProject.title}</h1>
                         <p className='dark:text-white'>{selectedProject.description}</p>
                         <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>{selectedProject.frameworks}</p>

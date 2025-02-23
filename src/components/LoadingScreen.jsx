@@ -9,7 +9,7 @@ const LoadingScreen = ({ onComplete }) => {
  const barProps = useSpring({
     width: `${progress}%`,
     from: { width: '0%' },
-    config: { duration: 500 },
+    config: { duration: 100 },
     onRest: () => {
           if (progress === 100) {
             onComplete();
