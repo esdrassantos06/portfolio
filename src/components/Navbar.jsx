@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../App.css";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useLocation, Link } from "react-router";
+import PropTypes from "prop-types";
 
 const Navbar = () => {
   // Configurações e estados
@@ -83,6 +84,10 @@ const Navbar = () => {
     </ul>
   );
 
+  NavLinks.propTypes = {
+    isMobile: PropTypes.bool
+  };
+  
   const LogoLink = () => (
     <Link
       to="/"
