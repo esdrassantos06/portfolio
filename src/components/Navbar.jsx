@@ -234,7 +234,7 @@ const Navbar = () => {
 
         {/* Menu móvel */}
         {isOpen && (
-          <div className="w-full z-1000 relative -mt-2 flex items-center justify-center">
+          <div className="w-full z-1000 relative -mt-5 flex items-center justify-center">
             <nav
               className={`z-1000 text-xl dark:bg-custom-black border-t border-gray-300 border-solid 
               dark:border-gray-700 relative bg-mist-gray flex w-full max-w-screen h-screen 
