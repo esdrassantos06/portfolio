@@ -5,7 +5,7 @@ import LoadingScreen from './LoadingScreen';
 
 const Layout = () => {
  const [loading, setLoading] = useState(true);
- const fadeProps = useSpring({ opacity: loading ? 0 : 1, config: { duration: 1000 } });
+ const fadeProps = useSpring({ opacity: loading ? 0 : 1, config: { duration: 500 } });
 
  const handleLoadingComplete = () => {
     setLoading(false);
